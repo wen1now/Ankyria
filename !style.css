@@ -1,0 +1,590 @@
+html,body {
+    height:100%;
+    overflow: hidden;
+    font-family: times new roman;
+}
+
+#gameContainer {
+    width: 100%;
+    height: 96%;
+    position: relative;
+}
+
+#license {
+    font-size: 12pt;
+    display: inline-block;
+    float: right;
+}
+
+#topbar {
+    float: top;
+    width: 100%;
+    clear: both;
+    height: 40px;
+}
+
+#notenoughwarning {
+    position: fixed;
+    border-radius: 8px;
+    background-color: #ff5555;
+    width: 30%;
+    font-size: 20px;
+    left: 200px;
+    border: solid black;
+    text-align: center;
+}
+/*--------------------------
+logstuff*/
+
+#logCont {
+    float: left;
+    width: 30%;
+    height: 70%;
+    border-style: solid solid none solid;
+    border-width: 1px;
+}
+
+#logHead {
+    font-size: 16pt;
+}
+
+.logtimestamp {
+    font-weight: bold;
+}
+
+.logwarning {
+    color: red;
+    font-weight: bold;
+}
+
+/*--------------------------------
+Options*/
+#optionsico {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 0px;
+    bottom: 40px;
+}
+
+#optionsmenu {
+    position: absolute;
+    visibility: hidden;
+    overflow: hidden;
+    top: -116px;
+    left: -180px;
+}
+
+#optionsico:hover #optionsmenu {
+    visibility: visible;
+}
+
+.optionsitem {
+    margin: 1px;
+    cursor: pointer;
+    float: top;
+    background-color: #676767;
+    color: white;
+    width: 200px;
+    border-radius: 2px;
+    border: 1px solid black;
+    padding-left: 5px;
+    font-size: 20px;
+}
+
+#savenotify {
+    position: fixed;
+    right: 10px;
+    top: 40px;
+    background-color: #9d89e8;
+    font-style: bold;
+    width: 100px;
+    border-radius: 3px;
+    border: 2px solid black;
+    padding-left: 5px;
+    height: 20px;
+}
+
+#skipstory {
+    width: 120px;
+    font-size: 12pt;
+    background-color: #a1f1c3;
+    border: 2px solid black;
+    border-radius: 1px;
+    cursor: pointer;
+}
+
+.exportbox {
+    width: 500px;
+    height: 400px;
+    border: 2px solid black;
+    top: 20px;
+    right: 20px;
+    position: fixed;
+    visibility: hidden;
+    background-color: white;
+    padding: 10px;
+}
+
+.exportbox.show {
+    visibility: visible;
+}
+
+#exporttext {
+    width: 100%;
+    height: 95%;
+}
+
+#importtext {
+    width: 100%;
+    height: 90%;
+}
+
+.closepopup {
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    /*
+    width: 10px;
+    height: 10px;*/
+    padding: 1px;
+    background-color: white;
+}
+/*--------------------------------
+Rightside stuff*/
+
+#middle {
+    float: left;
+    width: 50%;
+    margin-left: 25px;
+}
+
+.tabbars {
+    float: left;
+    width: 100%;
+}
+
+/*============================================Main GAME=========================================*/
+#maingame {
+    padding-top: 25px;
+    margin: 10px;
+    height: 75vh;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#sidebar {
+    position: fixed;
+    width: 200px;
+    right: 10px;
+    top: 80px;
+}
+
+/*this is where the tab buttons are styled*/
+.tabBut {
+    width: 120px;
+    float: left;
+    margin-left: 10px; /*probs style this more later*/
+    margin-bottom: 2px;
+    font-size: 12pt;
+    background-color: #7ec0ee;
+    border: 2px solid black;
+    border-radius: 1px;
+    color: #1b4386;
+    cursor: pointer;
+}
+
+#tooltip {
+    width: 140px;
+    padding: 5px;
+    border: 1px solid black;
+    background-color: #dddddd;
+ 
+    /* Position the tooltip text - see examples below! */
+    position: fixed;
+    z-index: 2;
+}
+/*----------------------------------
+Calendar*/
+
+#cal {
+    float: right;
+}
+
+#calhour {
+    float: left;
+    padding-right: 4px;
+}
+
+#calday {
+    float: left;
+    padding-right: 4px;
+}
+
+#calyear {
+    float: left;
+    padding-right: 4px;
+}
+
+/*----------------------------------
+fade ins*/
+.fadein {
+    opacity:0;
+    transition: opacity 0.8s;
+}
+
+
+/*----------------------------------
+shuttle stuff*/
+#shuttleReslistTitle {
+    float: left;
+    clear: both;
+    font-weight: bold;
+    font-family: 'Helvetica Neue', sans-serif;
+    letter-spacing: -1px;
+    font-size: 24px;
+    color: #333333
+}
+
+.shuttleReslistItem {
+    float: left;
+    clear: both;
+    display: inline-block;
+}
+
+.shuttleReslistNum {
+    width: 100px;
+    display: inline-block;
+}
+
+.shuttleReslistCap {
+    width: 100px;
+    display: inline-block;
+}
+
+.shuttleReslistName {
+    width: 150px;
+    float: left;
+}
+
+/*Sidebar stuff*/
+
+#miniResTitle {
+    float: left;
+    clear: both;
+    font-weight: bold;
+    font-family: 'Helvetica Neue', sans-serif;
+    letter-spacing: -1px;
+    font-size: 24px;
+    color: #333333
+}
+
+.sidebarReslistItem {
+    float: left;
+    clear: both;
+    display: inline-block;
+}
+
+.sidebarReslistNum {
+    width: 60px;
+    display: inline-block;
+}
+
+.sidebarReslistCap {
+    width: 60px;
+    display: inline-block;
+}
+
+.sidebarReslistName {
+    width: 80px;
+    float: left;
+}
+
+/*-----------------------------------------*/
+/*explore stuff*/
+#explorebox {
+    width: 500px;
+    height: 500px;
+    overflow: auto;
+    position: relative;
+}
+
+.exploreico {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+}
+
+.explorebought {
+    background-color: black;
+}
+
+.exploreline {
+    width: 2px;
+    position: absolute;
+}
+
+
+/* Tooltip text */
+.exploretooltip {
+    visibility: hidden;
+    width: 160px;
+    background-color: black;
+    color: #eeeeee;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: calc(100% + 18px);
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.exploreico:hover .exploretooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.explorelocname {
+    font-size: 18px;
+    color: #abcdef;
+}
+
+.explored {
+    color: #aefc9e
+}
+
+.exploretime {
+    color: #ff8c8a
+}
+
+.exploreitemcostitem {
+    color: #ff8c8a
+}
+
+/*----------------------------------
+job stuff*/
+
+#eatsnack {
+    float: top;
+    border: solid;
+    border-radius: 2px;
+    margin: 10px 5px;
+    padding: 5px 5px 10px;
+    display: inline-block;
+}
+
+#eatsnack:active {
+    background-color: #777;
+}
+
+.jobitem {
+    float: top;
+    background-color: #a8b872;
+    display: inline-block;
+    width: 45%;
+    margin: 10px 5px;
+    border: solid;
+    border-radius: 8px;
+    padding: 5px 5px 10px;
+    cursor: pointer;
+}
+
+.jobitem:active {
+    background-color: #889852
+}
+
+.jobitemtitle {
+    font-size: 20px;
+    
+}
+
+.jobitemtime {
+
+}
+
+.jobitembox {
+    background-color: #2ec51a;
+    border-radius: 6px;
+    border: solid;
+    border-width: 1px;
+    position: relative;
+    width: 40%;
+    float: left;
+    padding: 2px;
+}
+
+.jobitemgetgrid {
+    left: 0%;
+}
+
+.jobitemcostgrid {
+    left: 10%;
+}
+
+.jobitemlistcaption {
+    border-radius: 5px;
+    background-color: #a8de62;
+    font-size: 18px;
+}
+
+.jobitemdes {
+    float: left;
+    clear: both;
+}
+
+/*time stuff*/
+#timebar {
+  width: 100px;
+  height: 20px;
+  position: relative;
+  background-color: #ffffff;
+}
+
+#timedone {
+  background-color: #4CAF50;
+  width: 0px;
+  height: 20px;
+  position: absolute;
+}
+
+/* Tooltip text */
+.restooltip {
+    visibility: hidden;
+    width: 160px;
+    background-color: black;
+    color: #eeeeee;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: calc(100% + 18px);
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.shuttleReslistName:hover .exploretooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+/*---------------------------------------------
+Workshop */
+
+.workshopitem {
+    float: top;
+    border-radius: 8px;
+    background-color: #806533;
+    display: inline-block;
+    width: 28%;
+    margin: 10px 5px;
+    border: solid black;
+    padding: 5px 5px 10px;
+    cursor: pointer;
+    color: #cbbba8;
+    padding-left: 10px;
+}
+
+.workshopitem:active {
+    background-color: #604513;
+}
+
+.workshopitemlistcaption {
+    background-color: #8fbe42;
+    border-radius: 5px;
+    font-size: 18px;
+    font-size: 18px;
+}
+
+.workshopitembox {
+    border-radius: 5px;
+    background-color: #a8de62;
+    color: #405533;
+    padding-left: 10px;
+    padding: 2px;
+    border: solid black 1px;
+}
+
+.workshopitemdes {
+    float: left;
+    clear: both;
+}
+
+.workshopitemtitle {
+    font-size: 20px;
+}
+
+/*--------------------------Buildings--------------------*/
+
+.buildingcontainer {
+    float: top;
+    display: inline-block;
+    margin: 10px 5px;
+    position: relative;
+    width: 30%;
+    height: ;
+}
+
+.buildingitem {
+    width: 90%;
+    float: left;
+    position: relative;
+    border-radius: 8px;
+    background-color: #aaaa99;
+    border: solid black;
+    padding: 5px 5px 10px;
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+.buildingitem:active {
+    background-color: #8a8a79;
+}
+
+.buildingitemlistcaption {
+    background-color: #777766;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.buildingitembox {
+    position: relative;
+    border-radius: 5px;
+    background-color: #888877;
+    color: #cccc99;
+    padding: 2px;
+    border: solid black 1px;
+}
+
+.buildingshopitemdes {
+    float: left;
+    clear: both;
+}
+
+.buildingitemtitle {
+    font-size: 20px;
+}
+
+.convertbuttons {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    opacity: 0.2;
+}
+
+.convertbuttons:hover {
+    opacity: 1;
+}
+
+
+
