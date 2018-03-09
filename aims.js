@@ -58,7 +58,7 @@ l.aims.initiate = function(){
     l.tellstory(l.aims.init_story);
     var startgame = setInterval(function(){
         if (l.playing){
-            l.tabs.list[0].settab();
+            l.tabs.list[0][0].settab();
             clearInterval(startgame);
             clearInterval(y);
             l.log("I've landed. It wasn't as rough as I thought. However, my supplies are limited. I need to find some water <i>fast</i>, before what I have runs out. Hopefully I can survive here...");

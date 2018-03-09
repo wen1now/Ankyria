@@ -8,9 +8,11 @@ l.gensave = function(){
     save.tabs = new Object();
     save.tabs.list = new Object;
     for (var i in l.tabs.list){
-        var x = l.tabs.list[i];
-        save.tabs.list[x.id] = new Object();
-        save.tabs.list[x.id].vis = x.vis;
+        for (var j in l.tabs.list[i]){
+            var x = l.tabs.list[i][j];
+            save.tabs.list[x.id] = new Object();
+            save.tabs.list[x.id].vis = x.vis;
+        }
     }
     save.res = new Object();
     save.res.list = new Object();
@@ -97,8 +99,10 @@ l.load = function(save){
     if (!save){var save = JSON.parse(localStorage.getItem("__save"));}
     if (save){
         for (var i in l.tabs.list){
-            if (save.tabs.list[l.tabs.list[i].id]){
-                l.tabs.list[i].vis = save.tabs.list[l.tabs.list[i].id].vis;
+            for (var j in l.tabs.list[i]){
+                if (save.tabs.list[l.tabs.list[i][j].id]){
+                    l.tabs.list[i][j].vis = save.tabs.list[l.tabs.list[i][j].id].vis;
+                }
             }
         }
         for (var i in l.res.list){
@@ -174,7 +178,7 @@ l.options.delsave = function(){
         localStorage.removeItem("__save");
         localStorage.removeItem("__log");
         localStorage.removeItem("log");
-        message("Refresh to complete. Alternatively, click save from the menu if you wish to undo")
+        alert("Refresh to complete. Alternatively, click save from the menu if you wish to undo")
     }
 }
 
