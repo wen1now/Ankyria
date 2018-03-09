@@ -9,7 +9,7 @@ l.explore.list = [{
     },{
     name: "North",
     id: "north",
-    pos: [0,5],
+    pos: [0,2],
     time: 5,
     visprereq: {explore: ["shuttle"]},
     des: "Explore the area around you to the north.",
@@ -17,7 +17,7 @@ l.explore.list = [{
     },{
     name: "South",
     id: "south",
-    pos: [0,-5],
+    pos: [0,-2],
     time: 5,
     visprereq: {explore: ["shuttle"]},
     des: "Explore the area around you to the south",
@@ -25,7 +25,7 @@ l.explore.list = [{
     },{
     name: "East",
     id: "east",
-    pos: [5,0],
+    pos: [2,0],
     time: 5,
     visprereq: {explore: ["shuttle"]},
     des: "Explore the area around you to the east",
@@ -33,14 +33,14 @@ l.explore.list = [{
     },{
     name: "West",
     id: "west",
-    pos: [-5,0],
+    pos: [-2,0],
     time: 5,
     visprereq: {explore: ["shuttle"]},
     des: "Explore the area around you to the west",
     log: "Went to the west, didn't find much. It appears there's a desert down south and a forest to the west."
     },{
     id: "forest",
-    pos: [-11,-1],
+    pos: [-4,-1],
     time: 20,
     visprereq: {explore: ["west"]},
     des: "Go exploring in the forest",
@@ -48,7 +48,7 @@ l.explore.list = [{
     },{
     name: "Deep forest",
     id: "deepforest",
-    pos: [-14,-4],
+    pos: [-7,-2],
     time: 50,
     visprereq: {explore: ["forest"]},
     cost: [{id: "water", val: 100}],
@@ -56,7 +56,7 @@ l.explore.list = [{
     log: "I found even more trees to chop down. Well, what did I expect from more forest?"
     },{
     id: "jungle",
-    pos: [-18,-5],
+    pos: [-11,-3],
     time: 400,
     visprereq: {explore: ["deepforest"]},
     cost: [{id: "water", val: 800}],
@@ -65,7 +65,7 @@ l.explore.list = [{
     },{
     name: "Plains",
     id: "plains",
-    pos: [2,8],
+    pos: [1,4],
     time: 25,
     cost: [{id: "water", val: 100}],
     visprereq: {explore: ["north"]},
@@ -74,7 +74,7 @@ l.explore.list = [{
     },{
     name: "More plains",
     id: "plainscen",
-    pos: [5,14],
+    pos: [3,7],
     time: 125,
     cost: [{id: "water", val: 800}],
     get: [{id: "rawmeat", val: 2}],
@@ -84,7 +84,7 @@ l.explore.list = [{
     },{
     name: "North western plain",
     id: "plainsnw",
-    pos: [-3,23],
+    pos: [-1,11],
     time: 400,
     cost: [{id: "water", val: 1200}],
     visprereq: {explore: ["plainscen"]},
@@ -92,7 +92,7 @@ l.explore.list = [{
     log: "Ah-ha! The plain gives way to... sea. Tough luck, time for me to go back."
     },{
     id: "desert",
-    pos: [-1,-12],
+    pos: [-1,-4],
     time: 20,
     cost: [{id: "water", val: 250}],
     get: [{id: "water", val: 20}],
@@ -102,7 +102,7 @@ l.explore.list = [{
     },{
     name: "Deep desert",
     id: "deepdesert",
-    pos: [0,-23],
+    pos: [0,-7],
     time: 200,
     cost: [{id: "water", val: 2000}],
     visprereq: {explore: ["desert"]},
@@ -110,7 +110,7 @@ l.explore.list = [{
     log: "There's a lot of shiny stuff in the ground around here."
     },{
     id: "mines",
-    pos: [1,-22],
+    pos: [1,-10],
     time: 200,
     cost: [{id: "water", val: 2500}],
     visprereq: {workshop: ["woodpick"]},
@@ -119,7 +119,7 @@ l.explore.list = [{
     },{
     name: "Mountains",
     id: "mountains1",
-    pos: [-10,-10],
+    pos: [-5,-5],
     time: 500,
     cost: [{id: "water", val: 2000}],
     visprereq: {explore: ["desert","deepforest"]},
@@ -128,7 +128,7 @@ l.explore.list = [{
     },{
     name: "Mountains",
     id: "mountains2",
-    pos: [-12,-11],
+    pos: [-6,-6],
     time: 800,
     cost: [{id: "water", val: 2200}],
     visprereq: {explore: ["mountains1"]},
@@ -137,7 +137,7 @@ l.explore.list = [{
     },{
     name: "Mountains",
     id: "mountains3",
-    pos: [-11,-14],
+    pos: [-5,-7],
     time: 1000,
     cost: [{id: "water", val: 2500}],
     visprereq: {explore: ["mountains2"]},
@@ -146,7 +146,7 @@ l.explore.list = [{
     },{
     name: "Caves",
     id: "coalcave",
-    pos: [-11,-15],
+    pos: [-6,-8],
     time: 500,
     cost: [{id: "water", val: 2000}],
     visprereq: {explore: ["mountains3"]},
@@ -155,7 +155,7 @@ l.explore.list = [{
     },{
     name: "Mountains",
     id: "mountains4",
-    pos: [-13,-15],
+    pos: [-6,-8],
     time: 1250,
     cost: [{id: "water", val: 3000}],
     visprereq: {explore: ["mountains3"]},
@@ -164,7 +164,7 @@ l.explore.list = [{
     },{
     name: "Mountains",
     id: "mountains5",
-    pos: [-13,-18],
+    pos: [-7,-10],
     time: 1600,
     cost: [{id: "water", val: 3400}],
     visprereq: {explore: ["mountains4"]},
@@ -173,7 +173,7 @@ l.explore.list = [{
     },{
     name: "Mountains",
     id: "mountains6",
-    pos: [-14,-20],
+    pos: [-7,-12],
     time: 2000,
     cost: [{id: "water", val: 4000}],
     visprereq: {explore: ["mountains5"]},
@@ -182,7 +182,7 @@ l.explore.list = [{
     },{
     name: "Mountains",
     id: "mountains7",
-    pos: [-15,-22],
+    pos: [-8,-11],
     time: 2800,
     cost: [{id: "water", val: 5000}],
     visprereq: {explore: ["mountains6"]},
@@ -191,7 +191,7 @@ l.explore.list = [{
     },{
     name: "Mountains",
     id: "mountains8",
-    pos: [-16,-23],
+    pos: [-8,-12],
     time: 3200,
     cost: [{id: "water", val: 6000}],
     visprereq: {explore: ["mountains7"]},
@@ -200,7 +200,7 @@ l.explore.list = [{
     },{
     name: "Caves",
     id: "lavacave1",
-    pos: [-17,-23],
+    pos: [-9,-12],
     time: 1000,
     cost: [{id: "water", val: 2000}],
     visprereq: {explore: ["mountains8"]},
@@ -209,7 +209,7 @@ l.explore.list = [{
     },{
     name: "Caves",
     id: "lavacave2",
-    pos: [-18,-23],
+    pos: [-9,-12],
     time: 1200,
     cost: [{id: "water", val: 3000}],
     visprereq: {explore: ["mountains8"]},
@@ -218,7 +218,7 @@ l.explore.list = [{
     },{
     name: "Fishery",
     id: "nearlake",
-    pos: [5,1],
+    pos: [3,1],
     time: 5,
     visprereq: {explore: ["east"], res: ["iron"]},
     des: "Search for fishing places around the lake",
