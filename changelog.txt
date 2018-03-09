@@ -1,4 +1,7 @@
 0.0.1
+- Rebalanced stuffs (lower exploration times, cheaper storages)
+- Condensed map
+
 - Developed more better framework
 - Mostly new content
 - Functioning jobs, workshop, exploration and boosts for these

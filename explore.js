@@ -434,6 +434,9 @@ l.explore.calcglobalspeedboost = function(){
     var sb = 1;
     //do stuff here
     if (l.workshop.get("walkingstick").bought){sb+=0.5};
+    if (l.workshop.get("walkingstick2").bought){sb+=0.5};
+    if (l.workshop.get("walkingstick3").bought){sb+=0.5};
+    if (l.workshop.get("walkingstick4").bought){sb+=0.5};
     if (l.workshop.get("woodhatchet").bought){sb+=0.5};
     if (l.workshop.get("meatballmain").bought){sb+=0.3};
     if (l.workshop.get("salamimain").bought){sb+=0.5};

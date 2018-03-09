@@ -38,12 +38,11 @@ l.buildings.list = [{
     },{
     id: "shed",
     time: 25,
-    basecost: [{id: "wood", val: 100}],
+    basecost: [{id: "wood", val: 50}],
     prereq: {explore: ["deepforest"]},
     des: "Storage shed for resources",
     ratio: 1.3,
     get: [
-        {id: "waterCap", val: 100},
         {id: "woodCap", val: 100},
         {id: "rawmeatCap", val: 10},
         {id: "cookedmeatCap", val: 5},

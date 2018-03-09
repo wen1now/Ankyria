@@ -15,7 +15,31 @@ l.workshop.list = [{
     cost: [{id: "wood", val: 150}],
     prereq: {explore: ["forest"]},
     des: "Try to chop wood into the perfect walking stick.",
-    log: "Well, I used up a lot of wood until I finally made the perfect walking stick."
+    log: "This walking stick should enable me to explore faster"
+    },{
+    name: "Better walking stick",
+    id: "walkingstick2",
+    time: 60,
+    cost: [{id: "wood", val: 300}],
+    prereq: {workshop: ["walkingstick"]},
+    des: "Try to chop wood into the perfect walking stick.",
+    log: "This walking stick should enable me to explore even faster"
+    },{
+    name: "Even better WS",
+    id: "walkingstick3",
+    time: 80,
+    cost: [{id: "wood", val: 500}],
+    prereq: {workshop: ["walkingstick2"]},
+    des: "Try to chop wood into the perfect walking stick.",
+    log: "This walking stick should enable me to explore even more faster"
+    },{
+    name: "Excellent WS",
+    id: "walkingstick4",
+    time: 120,
+    cost: [{id: "wood", val: 700}],
+    prereq: {workshop: ["walkingstick3"]},
+    des: "Try to chop wood into the perfect walking stick.",
+    log: "This walking stick should enable me to explore even more fasterer"
     },{
     name: "Wooden pickaxe",
     id: "woodpick",
@@ -150,7 +174,7 @@ l.workshop.list = [{
     time: 300,
     cost: [{id: "iron", val: 10}],
     prereq: {res: ["iron"]},
-    des: "Make an iron stick to walk further, faster",
+    des: "Make an iron tipped walking stick to walk further, faster",
     log: "Building successful; I can now walk faster"
     },{
     name: "Iron tipped spears",
@@ -224,13 +248,12 @@ l.workshop.list = [{
     des: "Use wooden planks to gain extra space for sheds",
     log: "Sheds have been further reinforced."
     },{
-    name: "Boats",
-    id: "researchboats",
-    type: "research",
-    time: 20000,
-    prereq: {res: ["woodplank"]},
-    des: "Research boats for enhanced fishing techniques",
-    log: "Yay I can construct boats now!"
+    name: "H@CK3R",
+    id: "H@CK3R",
+    time: Infinity,
+    prereq: {workshop: ["H@CK3R"]},
+    des: "To weed out those cheaters",
+    log: "I am officially a hacker"
     }
 ]
 
