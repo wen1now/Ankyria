@@ -116,7 +116,7 @@ l.workshop.list = [{
     name: "Leafier collecters",
     id: "leafcol2",
     time: 100,
-    cost: [{id: "wood", val: 2000}],
+    cost: [{id: "water", val: 2000}],
     prereq: {
         explore: ["jungle"],
         workshop: ["leafcol"]

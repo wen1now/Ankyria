@@ -25,7 +25,7 @@ l.buildings.list = [{
             return m;
             }
         },{
-            id: "waterCap", val: 100, getmul: function(){
+            id: "waterCap", val: 30, getmul: function(){
             m = 0;
             if (l.workshop.get("leafcol2").bought){m=1}
             return m;

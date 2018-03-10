@@ -1,6 +1,8 @@
 0.0.2
+10/03/18
+- Water storage balances for early game
 
-0.0.1
+0.0.1: 10/03/18
 10/03/18
 - Balanced more stuff to speed things up more
 * Allowed queueing of a second job
@@ -16,7 +18,7 @@
 - Buildings added, on/offable
 - Massive iron bottleneck
 
-0.0.0 19/09/17
+0.0.0: 19/09/17
 - Developed for a few months
 - Added framework for pretty much everything
 - Fully functioning jobs (solo), workshop and exploration

@@ -5,8 +5,8 @@ l.jobs.list = [{
     time: 1,
     get: [{id: "water", val: 1, updmul: function(){
         var val = 1;
-        if (l.workshop.get("twinbuckets").bought){val+=1};
-        if (l.workshop.get("ironbuckets").bought){val+=3};
+        if (l.workshop.get("twinbuckets").bought){val=2};
+        if (l.workshop.get("ironbuckets").bought){val=10};
         return val;
     }}], //want MUL and UPDMUL for multipliand update multiplier (see below)
     prereq: {explore: ["east"]},
