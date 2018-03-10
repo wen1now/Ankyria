@@ -110,13 +110,13 @@ l.jobs.list = [{
     time: 8,
     settime: function(){
         time = 8;
-        if (l.workshop.get("coaltorches").bought){time-=1};
+        if (l.workshop.get("coaltorches").bought){time-=2};
         if (l.workshop.get("torchholders").bought){time-=1};
         this.time = time;
     },
     get: [{id: "ore", val: 1, updmul: function(){
         var val = 1;
-        if (l.workshop.get("ironpicks").bought){val+=0.2};
+        if (l.workshop.get("ironpicks").bought){val+=2};
         if (l.workshop.get("torchholders").bought){val+=1};
         return val;
     }}],
