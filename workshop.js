@@ -74,7 +74,7 @@ l.workshop.list = [{
     log: "These tools are extremely powerful!"
     },{
     name: "Lighter small axes",
-    id: "lightbigaxes",
+    id: "lightsmallaxes",
     time: 200,
     cost: [{id: "wood", val: 200}],
     prereq: {explore: ["jungle"]},
@@ -82,7 +82,7 @@ l.workshop.list = [{
     log: "These small axes are so light!"
     },{
     name: "Lighter medium axes",
-    id: "lightbigaxes",
+    id: "lightmediumaxes",
     time: 200,
     cost: [{id: "wood", val: 200}],
     prereq: {explore: ["jungle"]},
