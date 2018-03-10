@@ -1,7 +1,9 @@
+0.0.2
+
 0.0.1
 10/03/18
 - Balanced more stuff to speed things up more
-- Allowed queueing of a second job
+* Allowed queueing of a second job
 - Revamped more balancing
 
 08/03/18
@@ -9,7 +11,7 @@
 - Condensed map
 
 - Developed more better framework
-- Mostly new content
+* Mostly new content
 - Functioning jobs, workshop, exploration and boosts for these
 - Buildings added, on/offable
 - Massive iron bottleneck
