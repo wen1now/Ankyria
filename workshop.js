@@ -49,13 +49,13 @@ l.workshop.list = [{
     des: "Make a pickaxe to mine some of those ores from the mine",
     log: "Time to get mining!"
     },{
-    name: "Wooden pickaxe",
-    id: "woodpick",
-    time: 150,
-    cost: [{id: "wood", val: 350}],
-    prereq: {explore: ["deepforest","deepdesert"]},
-    des: "Make a pickaxe to mine some of those ores from the mine",
-    log: "Time to get mining!"
+    name: "Wooden hatchet",
+    id: "woodhatchet",
+    time: 200,
+    cost: [{id: "wood", val: 300}],
+    prereq: {explore: ["deepforest"]},
+    des: "Make a wooden hatchet to make the going just that little bit easier",
+    log: "This hatchet is great! Now I can clear paths in no time"
     },{
     name: "Wooden tools",
     id: "woodtools",
