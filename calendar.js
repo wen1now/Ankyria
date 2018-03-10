@@ -59,7 +59,7 @@ l.calendar.consume = function(){
     if (l.res.get("water").num>=1){
         l.res.get("water").num-=1;
     } else {
-        unfortunately
+        //add something here
     }
 }
 
