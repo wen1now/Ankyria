@@ -383,8 +383,10 @@ l.buildings.finished = function(id){
 l.buildings.globalspeedboost = 1;
 l.buildings.getspeedboost = function(){
     var sb = 1;
-    if (l.workshop.get("irontools").bought){sb+=0.1};
-    if (l.workshop.get("ironhammers").bought){sb+=0.9};
+    if (l.workshop.get("woodtools").bought){sb+=0.1};
+    if (l.workshop.get("woodtools2").bought){sb+=0.1};
+    if (l.workshop.get("irontools").bought){sb=1.4};
+    if (l.workshop.get("ironhammers").bought){sb+=1};
     return sb;
 }
 

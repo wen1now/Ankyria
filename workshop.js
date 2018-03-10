@@ -49,21 +49,61 @@ l.workshop.list = [{
     des: "Make a pickaxe to mine some of those ores from the mine",
     log: "Time to get mining!"
     },{
-    name: "Wooden hatchet",
-    id: "woodhatchet",
+    name: "Wooden pickaxe",
+    id: "woodpick",
+    time: 150,
+    cost: [{id: "wood", val: 350}],
+    prereq: {explore: ["deepforest","deepdesert"]},
+    des: "Make a pickaxe to mine some of those ores from the mine",
+    log: "Time to get mining!"
+    },{
+    name: "Wooden tools",
+    id: "woodtools",
+    time: 400,
+    cost: [{id: "wood", val: 250}],
+    prereq: {explore: ["jungle"]},
+    des: "Make wooden tools to speed up constructions",
+    log: "I guess workshop and building times should be decreased"
+    },{
+    name: "More powerful wooden tools",
+    id: "woodtools2",
+    time: 800,
+    cost: [{id: "wood", val: 500}],
+    prereq: {workshop: ["woodtools"]},
+    des: "Make wooden tools to speed up constructions more",
+    log: "These tools are extremely powerful!"
+    },{
+    name: "Lighter small axes",
+    id: "lightbigaxes",
     time: 200,
-    cost: [{id: "wood", val: 300}],
-    prereq: {explore: ["deepforest"]},
-    des: "Make a wooden hatchet to make the going just that little bit easier",
-    log: "This hatchet is great! I can now clear paths in no time"
+    cost: [{id: "wood", val: 200}],
+    prereq: {explore: ["jungle"]},
+    des: "Make your smalleset axes more powerful to reduce time to chop small trees",
+    log: "These small axes are so light!"
+    },{
+    name: "Lighter medium axes",
+    id: "lightbigaxes",
+    time: 200,
+    cost: [{id: "wood", val: 200}],
+    prereq: {explore: ["jungle"]},
+    des: "Make your smallest axes more powerful to reduce time to chop medium trees",
+    log: "These medium axes are so light!"
+    },{
+    name: "Lighter big axes",
+    id: "lightbigaxes",
+    time: 200,
+    cost: [{id: "wood", val: 200}],
+    prereq: {explore: ["jungle"]},
+    des: "Make your biggest axes more powerful to reduce time to chop large trees",
+    log: "These large axes are so light!"
     },{
     name: "Lightweight spears",
     id: "lightspears",
     time: 200,
     cost: [{id: "wood", val: 300}],
     prereq: {explore: ["deepforest"]},
-    des: "Make lightweight spears for larger hunting bonuses",
-    log: "Hunting will be faster and better"
+    des: "Make lightweight spears for faster hunting",
+    log: "Now with this upgrade, hunting will be faster"
     },{
     name: "Leaf collecter",
     id: "leafcol",
@@ -344,7 +384,9 @@ l.workshop.finished = function(id){
 l.workshop.globalspeedboost = 1;
 l.workshop.getspeedboost = function(){
     var sb = 1;
-    if (l.workshop.get("irontools").bought){sb+=1};
+    if (l.workshop.get("woodtools").bought){sb+=1};
+    if (l.workshop.get("woodtools2").bought){sb+=1};
+    if (l.workshop.get("irontools").bought){sb=5};
     return sb;
 }
 

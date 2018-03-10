@@ -21,7 +21,12 @@ l.jobs.list = [{
         if (l.workshop.get("ironaxes").bought){val+=2.1};
         val+=l.buildings.get("rangerstation").num;
         return val;
-    }}],
+    }},
+    settime: function(){
+        time = 5;
+        if (l.workshop.get("lightsmallaxes").bought){time-=2};
+        this.time = time;
+    }]],
     prereq: {explore: ["forest"]},
     des: "Cut down some of the small trees in the forest"
     },{
@@ -34,7 +39,12 @@ l.jobs.list = [{
         if (l.workshop.get("ironaxes").bought){val+=2};
         val+=l.buildings.get("rangerstation").num;
         return val;
-    }}],
+    }},
+    settime: function(){
+        time = 60;
+        if (l.workshop.get("lightmediumaxes").bought){time-=30};
+        this.time = time;
+    }]],
     prereq: {explore: ["deepforest"]},
     des: "Cut down some of the trees in the forest"
     },{
@@ -45,7 +55,12 @@ l.jobs.list = [{
         var val = 1;
         val+=l.buildings.get("rangerstation").num;
         return val;
-    }}],
+    }},
+    settime: function(){
+        time = 300;
+        if (l.workshop.get("lightbigaxes").bought){time-=200};
+        this.time = time;
+    }],
     prereq: {explore: ["jungle"]},
     des: "Cut down some of the big trees in the jungle"
     },{
@@ -70,7 +85,7 @@ l.jobs.list = [{
     time: 20,
     settime: function(){
         time = 20;
-        if (l.workshop.get("lightspears").bought){time-=5};
+        if (l.workshop.get("lightspears").bought){time-=15};
         this.time = time;
     },
     cost: [{id: "spear", val: 1}],
