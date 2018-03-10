@@ -1,6 +1,8 @@
 0.0.1
 10/03/18
 - Balanced more stuff to speed things up more
+- Allowed queueing of a second job
+- Revamped more balancing
 
 08/03/18
 - Rebalanced stuffs (lower exploration times, cheaper storages)

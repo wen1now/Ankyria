@@ -182,7 +182,7 @@ l.explore.list = [{
     },{
     name: "Mountains",
     id: "mountains7",
-    pos: [-8,-11],
+    pos: [-8,-12],
     time: 2800,
     cost: [{id: "water", val: 5000}],
     visprereq: {explore: ["mountains6"]},
@@ -191,16 +191,24 @@ l.explore.list = [{
     },{
     name: "Mountains",
     id: "mountains8",
-    pos: [-8,-12],
+    pos: [-8,-13],
     time: 3200,
     cost: [{id: "water", val: 6000}],
     visprereq: {explore: ["mountains7"]},
     des: "Go exploring the mountains",
     log: "Found another cave today"
     },{
+    name: "Mountains",
+    id: "people",
+    pos: [-10,-15],
+    time: 3500,
+    cost: [{id: "water", val: 7000}],
+    visprereq: {explore: ["mountains8"]},
+    des: "Go exploring the mountains"
+    },{
     name: "Caves",
     id: "lavacave1",
-    pos: [-9,-12],
+    pos: [-9,-13],
     time: 1000,
     cost: [{id: "water", val: 2000}],
     visprereq: {explore: ["mountains8"]},
@@ -209,7 +217,7 @@ l.explore.list = [{
     },{
     name: "Caves",
     id: "lavacave2",
-    pos: [-9,-12],
+    pos: [-10,-12],
     time: 1200,
     cost: [{id: "water", val: 3000}],
     visprereq: {explore: ["mountains8"]},
@@ -336,10 +344,7 @@ l.explore.setalltimes = function(){
 l.explore.explore=function(id){
     x = l.explore.get(id);
     if (!x.bought){
-        l.jobs.cur = l.explore.get(id);
-        l.jobs.time = l.explore.get(id).time;
-        l.jobs.cur.type = "explore";
-        l.explore.cur = id;
+        l.jobs.queuejob(x,"explore");
     }
     l.topbarjoblooks();
 }

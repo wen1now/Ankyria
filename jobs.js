@@ -24,7 +24,7 @@ l.jobs.list = [{
     }}],
     settime: function(){
         time = 5;
-        if (l.workshop.get("lightsmallaxes").bought){time-=2};
+        if (l.workshop.get("lightsmallaxes").bought){time=3};
         this.time = time;
     },
     prereq: {explore: ["forest"]},
@@ -42,7 +42,7 @@ l.jobs.list = [{
     }}],
     settime: function(){
         time = 60;
-        if (l.workshop.get("lightmediumaxes").bought){time-=30};
+        if (l.workshop.get("lightmediumaxes").bought){time=30};
         this.time = time;
     },
     prereq: {explore: ["deepforest"]},
@@ -58,7 +58,7 @@ l.jobs.list = [{
     }}],
     settime: function(){
         time = 300;
-        if (l.workshop.get("lightbigaxes").bought){time-=200};
+        if (l.workshop.get("lightbigaxes").bought){time=150};
         this.time = time;
     },
     prereq: {explore: ["jungle"]},
@@ -214,9 +214,24 @@ l.jobs.get = function(id){
 }
 
 l.jobs.cur = null;
+l.jobs.next = null;
+
+l.jobs.queuejob = function(job,jobtype){
+    if (l.jobs.cur!=null){
+        l.jobs.next = new Object();
+        l.jobs.next.id = job.id;
+        l.jobs.next.type = jobtype;
+        l.jobs.next.name = job.name;
+    } else {
+        l.jobs.cur = job;
+        l.jobs.cur.type = jobtype;
+        l.jobs.time = job.time;
+    }
+}
+
 l.jobs.setjob = function(jobid){
-    this.cur = this.get(jobid);
-    this.time = this.cur.time;
+    x=this.get(jobid);
+    l.jobs.queuejob(x,"normal");
     l.topbarjoblooks();
 }
 
@@ -243,19 +258,32 @@ l.jobs.do = function(timelapsed){
         if (abletodo){
             if (x.type !== "building"){for (var i in x.get){l.res.get(x.get[i].id).get(x.get[i].val)}}
             for (var i in x.cost){l.res.get(x.cost[i].id).num-=x.cost[i].val;}
-            if (x.type=="explore"){l.explore.explored(x.id);}
+            if (x.type=="explore"){l.explore.explored(x.id)}
             else if (x.type=="workshop"){l.workshop.finished(x.id)}
             else if (x.type=="building"){l.buildings.finished(x.id)}
-            else {l.jobs.time=x.time;}
+            if (l.jobs.next!=null){
+                l.jobs.canceljob();
+            } else if (x.type == "normal") {
+                l.jobs.next = l.jobs.cur;
+                l.jobs.canceljob();
+            }
             if (!(x.type == "normal")){
                 l[l.tabs.curtab].draw();
-            }
+            } 
             l.topbarjoblooks();
         } else {
             l.jobs.time = 1;
             l.topbarjoblooks();
         }
     }
+}
+
+l.jobs.canceljob = function(){
+    l.jobs.cur = l.get(l.jobs.next.id);
+    l.jobs.cur.type = l.jobs.next.type;
+    l.jobs.time = l.jobs.cur.time;
+    l.jobs.next = null;
+    l.topbarjoblooks();
 }
 
 l.jobs.globalgetboost = 1;

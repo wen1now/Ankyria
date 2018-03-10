@@ -184,7 +184,7 @@ l.display = function(input){
 //--------------------------------------------------
 //topbar stuff, jobs etc. etc.
 l.topbarjoblooks = function(fromtick,onload){
-    if (!document.getElementById("topbarjob")){document.getElementById("topbar").innerHTML += "<div id='topbarjob'></div>"}
+    if (!document.getElementById("topbarjob")){document.getElementById("topbar").innerHTML += "<div id='topbarjob'></div><div id='topbarnextjob'></div>"}
     x = document.getElementById("topbarjob");
     if ((l.jobs.cur !== null && l.jobs.time == l.jobs.cur.time) || onload){
         if (l.jobs.cur.type == "normal"){
@@ -206,6 +206,23 @@ l.topbarjoblooks = function(fromtick,onload){
     } else if (l.jobs.cur == null){
         document.getElementById("topbarjob").innerHTML = "";
     }
+    x = document.getElementById("topbarnextjob");
+    if (l.jobs.next != null){
+        x.innerHTML = "Next job: "
+        if (l.jobs.next.type == "normal"){
+            x.innerHTML += l.jobs.next.name;
+        }
+        if (l.jobs.next.type == "explore"){
+            x.innerHTML += "Exploring: "+l.jobs.next.name;
+        }
+        if (l.jobs.next.type == "workshop"){
+            x.innerHTML += "Making: "+l.jobs.next.name;
+        }
+        if (l.jobs.next.type == "building"){
+            x.innerHTML += "Building: "+l.jobs.next.name;
+        }
+        x.innerHTML += "<div id='canceljob' onclick='l.jobs.canceljob()'>Cancel current job</div>"
+    } else {x.innerHTML = ""}
 }
 
 //timebar
@@ -232,6 +249,17 @@ l.timebar.restart = function(w,redraw){
             try {document.getElementById("timedone").style.width = 100 - 100 * width/finaltime + "%";} catch(err){};
         }
     }
+}
+
+l.get = function(id){
+    x = l.jobs.get(id);
+    if (x){return x}
+    x = l.workshop.get(id);
+    if (x){return x}
+    x = l.buildings.get(id);
+    if (x){return x}
+    x = l.explore.get(id);
+    if (x){return x}
 }
 
 l.drawtooltip = function(top,left,type,id){

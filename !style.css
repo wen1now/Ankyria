@@ -23,6 +23,25 @@ html,body {
     height: 40px;
 }
 
+#topbarjob {
+    float: left;
+    margin-right: 20px;
+}
+
+#topbarnextjob {
+    float: left;
+}
+
+#canceljob {
+    padding: 1px;
+    cursor: pointer;
+    height: 16px;
+}
+
+#canceljob:active {
+    color: #777;
+}
+
 #notenoughwarning {
     position: fixed;
     border-radius: 8px;

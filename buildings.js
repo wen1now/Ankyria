@@ -357,10 +357,7 @@ l.buildings.updateallcost = function(){
 l.buildings.cur = null;
 l.buildings.do = function(id){
     x = this.get(id);
-    l.jobs.cur = this.get(id);
-    l.jobs.time = this.get(id).time;
-    l.jobs.cur.type = "building";
-    this.cur = id;
+    l.jobs.queuejob(x,"building");
     l.topbarjoblooks();
 }
 

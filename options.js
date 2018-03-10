@@ -50,6 +50,7 @@ l.gensave = function(){
         save.buildings.list[x.id].numon = x.numon;
     }
     save.jobs.cur = l.jobs.cur;
+    save.jobs.next = l.jobs.next;
     save.jobs.time = l.jobs.time;
     if (document.getElementById("timedone")){save.timebar = document.getElementById("timedone").style.width;}
     save.explore = new Object();
@@ -121,6 +122,7 @@ l.load = function(save){
         }
         l.jobs.cur = save.jobs.cur;
         l.jobs.time = save.jobs.time;
+        l.jobs.next = save.jobs.next;
         if (save.timebar){l.timebar.restart(save.timebar,true);}
         //explorestuffs
         for (var i in l.explore.list){

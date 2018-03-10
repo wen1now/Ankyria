@@ -78,7 +78,7 @@ l.workshop.list = [{
     time: 200,
     cost: [{id: "wood", val: 200}],
     prereq: {explore: ["jungle"]},
-    des: "Make your smalleset axes more powerful to reduce time to chop small trees",
+    des: "Make your smalleset axes lighter to reduce time to chop small trees",
     log: "These small axes are so light!"
     },{
     name: "Lighter medium axes",
@@ -86,7 +86,7 @@ l.workshop.list = [{
     time: 200,
     cost: [{id: "wood", val: 200}],
     prereq: {explore: ["jungle"]},
-    des: "Make your smallest axes more powerful to reduce time to chop medium trees",
+    des: "Make your smallest axes lighter to reduce time to chop medium trees",
     log: "These medium axes are so light!"
     },{
     name: "Lighter big axes",
@@ -94,7 +94,7 @@ l.workshop.list = [{
     time: 200,
     cost: [{id: "wood", val: 200}],
     prereq: {explore: ["jungle"]},
-    des: "Make your biggest axes more powerful to reduce time to chop large trees",
+    des: "Make your biggest axes lighter to reduce time to chop large trees",
     log: "These large axes are so light!"
     },{
     name: "Lightweight spears",
@@ -360,10 +360,7 @@ l.workshop.do = function(id){
     x = this.get(id);
     x.time /= l.workshop.globalspeedboost;
     if (!x.bought){
-        l.jobs.cur = x;
-        l.jobs.time = x.time;
-        l.jobs.cur.type = "workshop";
-        this.cur = id;
+        l.jobs.queuejob(x,"workshop");
     }
     l.topbarjoblooks();
 }
