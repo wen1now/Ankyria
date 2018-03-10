@@ -71,7 +71,7 @@ l.aims.initiate = function(){
             l.tabs.list[0][0].settab();
             clearInterval(startgame);
             clearInterval(y);
-            l.log("I've landed. It wasn't as rough as I thought. However, my supplies are limited. I need to find some water <i>fast</i>, before what I have runs out. Hopefully I can survive here...");
+            l.log("I've landed. It wasn't as rough as I thought. However, my supplies are limited. I need to find some water <i>fast</i>, before what I have runs out (I'll need to drink 1 water every five hours). Hopefully I can survive here...");
         }
     },30);
 }
