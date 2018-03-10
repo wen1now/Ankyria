@@ -182,7 +182,7 @@ l.buildings.list = [{
     ],
     getallgetmul: function(){
         mul = 1;
-        if (l.workshop.get("woodplanksheds").bought){mul += 0.3}
+        if (l.workshop.get("woodplanksheds").bought){mul += 1}
         return mul;
     }
     },{
