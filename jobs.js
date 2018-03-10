@@ -309,12 +309,13 @@ l.jobs.settimeboost = function(){
     l.jobs.timeboost = 10*tb;
 }
 
+/*Snacking doesn't seem all that good right now
 l.jobs.eatsnack = function(){
     if (l.res.get("cookedmeat").num>=10){
         l.res.get("cookedmeat").num-=10;
         l.jobs.time-=l.jobs.timeboost;
     }
-}
+}*/
 
 l.jobs.updateall = function(){
     l.jobs.setallglobalboosts();
@@ -329,9 +330,10 @@ l.jobs.draw = function(){
     l.jobs.updateall();
     x = document.getElementById("maingame");
     x.innerHTML = "";
+    /*
     if (l.workshop.get("meatballmain").bought){
         x.innerHTML += "<div id='eatsnack' onclick='l.jobs.eatsnack()'>Eat snack</div>";
-    }
+    }*/
     for (var i in this.list){
         if (this.list[i].vis){
             x.innerHTML += "<div class='jobitem' id='jobitem"+this.list[i].id+"' onclick = 'l.jobs.setjob(\""+this.list[i].id+"\")'></div>";
