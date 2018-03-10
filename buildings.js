@@ -19,7 +19,7 @@ l.buildings.list = [{
         m = 1;
         if (l.workshop.get("leafcol").bought){m+=2}
         if (l.workshop.get("ironbowls").bought){m+=l.buildings.get("waterbowl").num*0.1}
-        if (l.workshop.get("ironwoodjets").bought){mul += l.buildings.get("waterbowl").num*0.2}
+        if (l.workshop.get("ironwoodjets").bought){m += l.buildings.get("waterbowl").num*0.2}
         return m;
     }}]
     },{
@@ -32,7 +32,7 @@ l.buildings.list = [{
     ratio: 1.25,
     get: [{id: "waterCap", val: 100, getmul: function(){
         m = 1;
-        if (l.workshop.get("ironwoodjets").bought){mul += l.buildings.get("raincol").num*0.1}
+        if (l.workshop.get("ironwoodjets").bought){m += l.buildings.get("raincol").num*0.1}
         return m;
     }}]
     },{
@@ -52,11 +52,11 @@ l.buildings.list = [{
         {id: "graphiteCap", val: 1}
     ],
     getallgetmul: function(){
-        mul = 1;
-        if (l.workshop.get("plainsheds").bought){mul += 0.3}
-        if (l.workshop.get("ironsheds").bought){mul += 0.5}
-        if (l.workshop.get("woodplanksheds").bought){mul += 0.3}
-        return mul;
+        m = 1;
+        if (l.workshop.get("plainsheds").bought){m += 0.3}
+        if (l.workshop.get("ironsheds").bought){m += 0.5}
+        if (l.workshop.get("woodplanksheds").bought){m += 0.3}
+        return m;
     }
     },{
     name: "Wood farm",
@@ -69,7 +69,7 @@ l.buildings.list = [{
     get: [{id: "wood", val: 0.05, getmul: function(){
         m = 1;
         m += l.buildings.get("fertilisestation").num * 0.1;
-        if (l.workshop.get("ironwoodjets").bought){mul += l.buildings.get("waterbowl").num*l.buildings.get("raincol").num*0.01}
+        if (l.workshop.get("ironwoodjets").bought){m += l.buildings.get("waterbowl").num*l.buildings.get("raincol").num*0.01}
         return m;
     }}]
     },{
@@ -120,9 +120,9 @@ l.buildings.list = [{
     change: [{id: "water", val: 1}],
     get: [{id: "ore", val: 0.02}],
     getallmul: function(){
-        var mul = 1
-        if (l.workshop.get("ironwoodjets").bought){mul += l.buildings.get("waterbowl").num*l.buildings.get("raincol").num*0.005}
-        return mul;
+        var m = 1;
+        if (l.workshop.get("ironwoodjets").bought){m += l.buildings.get("waterbowl").num*l.buildings.get("raincol").num*0.005}
+        return m;
     }
     },{
     id: "smelter",
@@ -139,9 +139,9 @@ l.buildings.list = [{
         return mul;
     }},{id: "graphite", val: 0.01,
     getmul: function(){
-        var mul = 0
-        if (l.workshop.get("graphitesmelters").bought){mul += 1}
-        return mul;
+        var m = 0;
+        if (l.workshop.get("graphitesmelters").bought){m += 1}
+        return m;
     }}]
     },{
     name: "Carbon storage",
@@ -181,9 +181,9 @@ l.buildings.list = [{
         {id: "graphiteCap", val: 1}
     ],
     getallgetmul: function(){
-        mul = 1;
-        if (l.workshop.get("woodplanksheds").bought){mul += 1}
-        return mul;
+        m = 1;
+        if (l.workshop.get("woodplanksheds").bought){m += 1}
+        return m;
     }
     },{
     id: "furnace",

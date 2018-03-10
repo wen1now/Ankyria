@@ -112,7 +112,18 @@ Options*/
     border: 2px solid black;
     border-radius: 1px;
     cursor: pointer;
+    margin-right: 10px;
 }
+
+/*
+#nextstory {
+    width: 120px;
+    font-size: 12pt;
+    background-color: #a1f1c3;
+    border: 2px solid black;
+    border-radius: 1px;
+    cursor: pointer;
+}*/
 
 .exportbox {
     width: 500px;

@@ -47,14 +47,15 @@ l.endstory = function(){
 l.tellstory = function(somearray){
     var x=document.getElementById("maingame");
     x.innerHTML
-    x.innerHTML="<button id='skipstory' onclick='l.endstory()'>Skip>></button><button id='nextstory' onclick='l.nextstory()'>Next>|></button>";
+    x.innerHTML="<button id='skipstory' onclick='l.endstory()'>Skip>>";
     var a = 0;
     var displaynext = function(somearray){
-        x.innerHTML += "<div style='opacity:0;' id='storytelling"+a+"'>"+l.aims.init_story[a]+"</div>";
+        x.innerHTML += "<div style='opacity:0;' id='storytelling"+a+"'>"+somearray[a]+"</div>";
         l.fadein(document.getElementById("storytelling"+a),a);
+        if (a>=1){document.getElementById("storytelling"+(a-1)).style.opacity = 1;}
         a++;
         if ((a<somearray.length) && !(l.playing)){
-            y=setTimeout(somearray,len(somearray[a])*500);
+            y=setTimeout(displaynext,somearray[a-1].length*60,somearray);
         } else {
             document.getElementById("skipstory").innerHTML = "Continue>>";
             clearInterval(y)};
