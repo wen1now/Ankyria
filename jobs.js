@@ -196,7 +196,7 @@ l.jobs.updateallcost = function(){
 
 l.jobs.setalltime = function(){
     for (var i in this.list){
-        if (this.list[i].settime){this.list[i].settime}
+        if (this.list[i].settime){this.list[i].settime()}
     }
 }
 
