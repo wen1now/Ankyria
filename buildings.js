@@ -15,12 +15,20 @@ l.buildings.list = [{
     prereq: {explore: ["forest"]},
     des: "When it rains, collect some water",
     ratio: 1.1,
-    get: [{id: "water", val: 0.1, getmul: function(){
-        m = 1;
-        if (l.workshop.get("leafcol").bought){m+=2}
-        if (l.workshop.get("ironbowls").bought){m+=l.buildings.get("waterbowl").num*0.1}
-        if (l.workshop.get("ironwoodjets").bought){m += l.buildings.get("waterbowl").num*0.2}
-        return m;
+    get: [{
+            id: "water", val: 0.1, getmul: function(){
+            m = 1;
+            if (l.workshop.get("leafcol").bought){m+=2}
+            if (l.workshop.get("leafcol2").bought){m+=4}
+            if (l.workshop.get("ironbowls").bought){m+=l.buildings.get("waterbowl").num*0.1}
+            if (l.workshop.get("ironwoodjets").bought){m += l.buildings.get("waterbowl").num*0.2}
+            return m;
+            }
+        },{
+            id: "waterCap", val: 100, getmul: function(){
+            m = 0;
+            if (l.workshop.get("leafcol2").bought){m=1}
+            return m;
     }}]
     },{
     name: "Water bowl",
@@ -32,6 +40,7 @@ l.buildings.list = [{
     ratio: 1.25,
     get: [{id: "waterCap", val: 100, getmul: function(){
         m = 1;
+            if (l.workshop.get("leafcol2").bought){m += 0.2}
         if (l.workshop.get("ironwoodjets").bought){m += l.buildings.get("raincol").num*0.1}
         return m;
     }}]
@@ -78,7 +87,7 @@ l.buildings.list = [{
     time: 10,
     basecost: [{id: "wood", val: 20}],
     prereq: {explore: ["plainscen"]},
-    des: "Traps animal meat",
+    des: "Traps animals to collect raw meat",
     ratio: 1.3,
     get: [{id: "rawmeat", val: 0.001, getmul: function(){
         m = 1;

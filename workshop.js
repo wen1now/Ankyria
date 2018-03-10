@@ -108,10 +108,21 @@ l.workshop.list = [{
     name: "Leaf collecter",
     id: "leafcol",
     time: 100,
-    cost: [{id: "wood", val: 500}],
+    cost: [{id: "water", val: 1500}],
     prereq: {explore: ["deepforest"]},
     des: "Leaves make building rain collecters faster and improves collection area",
     log: "I'll just go gather some leaves for my rain collecter..."
+    },{
+    name: "Leafier collecters",
+    id: "leafcol2",
+    time: 100,
+    cost: [{id: "wood", val: 2000}],
+    prereq: {
+        explore: ["jungle"],
+        workshop: ["leafcol"]
+    },
+    des: "Collecting more leaves makes rain collectors faster and they can also store water",
+    log: "I'll just go and gather more leaves for my rain collectors.."
     },{
     name: "Meatball sandwich",
     id: "meatballmain",
