@@ -66,7 +66,7 @@ l.buildings.list = [{
     prereq: {explore: ["jungle"]},
     des: "Build a farm to farm wood",
     ratio: 1.2,
-    get: [{id: "wood", val: 0.01, getmul: function(){
+    get: [{id: "wood", val: 0.05, getmul: function(){
         m = 1;
         m += l.buildings.get("fertilisestation").num * 0.1;
         if (l.workshop.get("ironwoodjets").bought){mul += l.buildings.get("waterbowl").num*l.buildings.get("raincol").num*0.01}
