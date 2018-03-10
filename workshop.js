@@ -384,8 +384,8 @@ l.workshop.finished = function(id){
 l.workshop.globalspeedboost = 1;
 l.workshop.getspeedboost = function(){
     var sb = 1;
-    if (l.workshop.get("woodtools").bought){sb+=1};
-    if (l.workshop.get("woodtools2").bought){sb+=1};
+    if (l.workshop.get("woodtools").bought){sb=2};
+    if (l.workshop.get("woodtools2").bought){sb=3};
     if (l.workshop.get("irontools").bought){sb=5};
     return sb;
 }

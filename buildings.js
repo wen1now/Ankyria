@@ -17,7 +17,7 @@ l.buildings.list = [{
     ratio: 1.1,
     get: [{id: "water", val: 0.1, getmul: function(){
         m = 1;
-        if (l.workshop.get("leafcol").bought){m+=0.4}
+        if (l.workshop.get("leafcol").bought){m+=2}
         if (l.workshop.get("ironbowls").bought){m+=l.buildings.get("waterbowl").num*0.1}
         if (l.workshop.get("ironwoodjets").bought){mul += l.buildings.get("waterbowl").num*0.2}
         return m;
@@ -383,10 +383,10 @@ l.buildings.finished = function(id){
 l.buildings.globalspeedboost = 1;
 l.buildings.getspeedboost = function(){
     var sb = 1;
-    if (l.workshop.get("woodtools").bought){sb+=0.1};
-    if (l.workshop.get("woodtools2").bought){sb+=0.1};
+    if (l.workshop.get("woodtools").bought){sb=1.1};
+    if (l.workshop.get("woodtools2").bought){sb=1.2};
     if (l.workshop.get("irontools").bought){sb=1.4};
-    if (l.workshop.get("ironhammers").bought){sb+=1};
+    if (l.workshop.get("ironhammers").bought){sb=3};
     return sb;
 }
 
