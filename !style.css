@@ -294,8 +294,18 @@ shuttle stuff*/
 }
 
 .shuttleReslistName {
-    width: 150px;
+    width: 100px;
     float: left;
+}
+
+.shuttleReslistGain {
+    width: 80px;
+    display: inline-block;
+}
+
+.shuttleReslistGainTime {
+    width: 50px;
+    display: inline-block;
 }
 
 /*Sidebar stuff*/

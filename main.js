@@ -157,26 +157,26 @@ l.log = function(stuffs){
 
 l.displaysymbols = ["","K","M","G","T","P","E","Z","Y"];
 l.display = function(input){
-    if (typeof input !== "number"){return input;};
-    var inputsign = 1;
-    if (input==0){return 0;}
+    if (typeof input !== "number"){return input}
+    if (input==0){return 0}
+    if (input<0){inputsign = "- ";input=-input} else {inputsign=""}
     if (input<1){
         if (input>=0.0005){
-            return Math.floor(input*1000)/1000;
+            return inputsign+Math.floor(input*1000)/1000;
         } else {
-            return "0.00..";
+            return inputsign+"0.00..";
         }
     };
     var log1000 = Math.floor(Math.log10(input)/3);
     if (log1000>=0 && log1000<l.displaysymbols.length){
         var pow = 1000**log1000;
         var cut = Math.round(input*1000/pow)/1000;
-        return cut*inputsign+l.displaysymbols[log1000];
+        return inputsign+cut+l.displaysymbols[log1000];
     } else {
         var log10 = Math.floor(Math.log10(input));
         var pow = 10**log10;
         var cut = Math.round(input*10/pow)/10;
-        return cut+'e+'+log10;
+        return inputsign+'e'+log10;
     } 
 };
 

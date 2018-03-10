@@ -197,11 +197,17 @@ l.shuttle.draw = function(){
     x = document.getElementById("shuttleReslist");
     for (var i in l.res.list){
         if (l.res.list[i].vis){
+            toadd = "<div class='shuttleReslistItem'>";
+            toadd += "<div class='shuttleReslistName'>"+l.res.list[i].name+": </div>";
+            toadd += "<div class='shuttleReslistNum' id='shuttleNumof"+l.res.list[i].id+"'>"+l.display(l.res.list[i].num)+"</div>";
             if (l.res.list[i].capped){
-            x.innerHTML+="<div class='shuttleReslistItem'><div class='shuttleReslistName'>"+l.res.list[i].name+": </div><div class='shuttleReslistNum' id='shuttleNumof"+l.res.list[i].id+"'>"+l.display(l.res.list[i].num)+"</div><div class='shuttleReslistCap' id='shuttleCapof"+l.res.list[i].id+"'>/ "+l.display(l.res.list[i].cap)+"</div></div>";
-            } else {
-            x.innerHTML+="<div class='shuttleReslistItem'><div class='shuttleReslistName'>"+l.res.list[i].name+": </div><div class='shuttleReslistNum' id='shuttleNumof"+l.res.list[i].id+"'>"+l.display(l.res.list[i].num)+"</div></div>";
-            }
+                toadd += "<div class='shuttleReslistCap' id='shuttleCapof"+l.res.list[i].id+"'>/ "+l.display(l.res.list[i].cap)+"</div>";
+            } else {toadd += "<div class='shuttleReslistCap'></div>"}
+            if (l.res.list[i].gain>0){sign = "+"} else {sign=""}
+            toadd += "<div class='shuttleReslistGain' id='shuttleGainof"+l.res.list[i].id+"'>"+sign+" "+l.display(l.res.list[i].gain)+"</div>";
+            toadd += "<div class='shuttleReslistGainTime'>/sec</div>";
+            toadd += "</div>";
+            x.innerHTML+=toadd;
         }
     }
 }
