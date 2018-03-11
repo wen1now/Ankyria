@@ -1,7 +1,9 @@
 html,body {
     height:100%;
     overflow: hidden;
+    background-color: #111;
     font-family: times new roman;
+    color: #aaa;
 }
 
 #gameContainer {
@@ -90,6 +92,7 @@ Options*/
     position: absolute;
     visibility: hidden;
     overflow: hidden;
+    top: -116px;
     left: -180px;
 }
 
@@ -114,7 +117,7 @@ Options*/
     position: fixed;
     right: 10px;
     top: 40px;
-    background-color: #9d89e8;
+    background-color: #54a;
     font-style: bold;
     width: 100px;
     border-radius: 3px;
@@ -217,7 +220,7 @@ Rightside stuff*/
     margin-left: 10px; /*probs style this more later*/
     margin-bottom: 2px;
     font-size: 12pt;
-    background-color: #7ec0ee;
+    background-color: #5ca0cc;
     border: 2px solid black;
     border-radius: 1px;
     color: #1b4386;
@@ -273,7 +276,7 @@ shuttle stuff*/
     font-family: 'Helvetica Neue', sans-serif;
     letter-spacing: -1px;
     font-size: 24px;
-    color: #333333
+    color: #aaaaaa;
 }
 
 .shuttleReslistItem {
@@ -354,6 +357,7 @@ shuttle stuff*/
     height: 16px;
     position: absolute;
     border-style: solid;
+    border-color: #aaa;
     border-width: 1px;
     cursor: pointer;
 }
@@ -373,10 +377,13 @@ shuttle stuff*/
     visibility: hidden;
     width: 160px;
     background-color: black;
-    color: #eeeeee;
+    color: #eee;
     text-align: center;
     padding: 5px 0;
     border-radius: 6px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #eee;
 
     /* Position the tooltip text */
     position: absolute;
@@ -426,7 +433,7 @@ job stuff*/
 
 .jobitem {
     float: top;
-    background-color: #a8b872;
+    background-color: #452;
     display: inline-block;
     width: 45%;
     margin: 10px 5px;
@@ -434,10 +441,12 @@ job stuff*/
     border-radius: 8px;
     padding: 5px 5px 10px;
     cursor: pointer;
+    color: #bbb;
+    border-color: #555;
 }
 
 .jobitem:active {
-    background-color: #889852
+    background-color: #341
 }
 
 .jobitemtitle {
@@ -450,7 +459,7 @@ job stuff*/
 }
 
 .jobitembox {
-    background-color: #2ec51a;
+    background-color: #171;
     border-radius: 6px;
     border: solid;
     border-width: 1px;
@@ -470,7 +479,7 @@ job stuff*/
 
 .jobitemlistcaption {
     border-radius: 5px;
-    background-color: #a8de62;
+    background-color: #581;
     font-size: 18px;
 }
 
@@ -484,11 +493,11 @@ job stuff*/
   width: 100px;
   height: 20px;
   position: relative;
-  background-color: #ffffff;
+  background-color: black;
 }
 
 #timedone {
-  background-color: #4CAF50;
+  background-color: #283;
   width: 0px;
   height: 20px;
   position: absolute;
@@ -579,7 +588,7 @@ Workshop */
     float: left;
     position: relative;
     border-radius: 8px;
-    background-color: #aaaa99;
+    background-color: #333;
     border: solid black;
     padding: 5px 5px 10px;
     cursor: pointer;

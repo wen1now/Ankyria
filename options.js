@@ -73,6 +73,7 @@ l.save = function(){
     //-------------------------------------------------
     //save log (is this necessary? Will make this optional :)
     localStorage.setItem("__log",JSON.stringify(l.logstuff.logged));
+    localStorage.setItem("__style",JSON.stringify(l.currenttheme));
     savenotify = document.getElementById('savenotify');
     savenotify.style.visiblity = 'visible';
     savenotify.style.display = 'block';
@@ -97,6 +98,10 @@ l.import = function(){
 }
 
 l.load = function(save){
+    if (localStorage.getItem("__style")){
+        l.changeCSS(JSON.parse(localStorage.getItem("__style")));
+        l.currenttheme = JSON.parse(localStorage.getItem("__style"));
+    }
     if (!save){var save = JSON.parse(localStorage.getItem("__save"));}
     if (save){
         for (var i in l.tabs.list){
@@ -159,6 +164,7 @@ l.load = function(save){
     }
 l.updateall();
 }
+
 //=====================================================
 l.options = new Object();
 l.options.draw = function(){
@@ -171,8 +177,10 @@ l.options.icodraw = function(){
     optionsmenuhtml += "<button class='optionsitem' onclick='l.save()'>Save</button>";
     optionsmenuhtml += "<button class='optionsitem' onclick='l.export()'>Export</button>";
     optionsmenuhtml += "<button class='optionsitem' onclick='l.importtoggle()'>Import</button>";
+    optionsmenuhtml += "<button class='optionsitem' onclick='l.changeCSS()'>Change theme</button>";
     savenotify = "<div id='savenotify' style='display:none'>Game saved!</div>";
     document.getElementById("gameContainer").innerHTML += savenotify+"<div id='optionsico'><object data='icons/options.ico'></object><div id='optionsmenu'>"+optionsmenuhtml+"</div></div>";
+    document.getElementById("optionsmenu").style.top = "-144px";
 }
 
 l.options.delsave = function(){
@@ -196,4 +204,22 @@ l.savefade = function(element){
         element.style.filter = 'alpha(opacity=' + op * 100 + ")";
         op -= op * 0.05+0.03;
     }, 100);
+}
+
+l.currenttheme = 0;
+l.themes = ["!style.css","dark.css"]
+l.changeCSS = function(newcss){
+    var oldlink = document.getElementsByTagName("link").item(0);
+    var newlink = document.createElement("link");
+    newlink.setAttribute("rel", "stylesheet");
+    newlink.setAttribute("type", "text/css");
+    if (newcss==undefined){
+        l.currenttheme += 1; l.currenttheme %= (l.themes.length);
+        newlink.setAttribute("href", l.themes[l.currenttheme]);
+    } else if (typeof(newcss)==typeof(0)) {
+        newlink.setAttribute("href", l.themes[newcss])
+    } else if (typeof(newcss)==typeof('')) {
+        newlink.setAttribute("href", newcss)
+    }
+    document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
 }
