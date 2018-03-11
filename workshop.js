@@ -266,7 +266,8 @@ l.workshop.list = [{
     cost: [{id: "iron", val: 80}],
     prereq: {minres: [{id: "iron", val:50}]},
     des: "Add a network of iron and wood pipes to connect all water things together",
-    log: "Connected bowls, rain collectors, waterstreams and wood farms"
+    log: "Connected bowls, rain collectors, waterstreams and wood farms",
+    effect: "Water things give each other an additive boost"
     },{
     name: "Fish traps",
     id: "fishtraps",
@@ -314,6 +315,14 @@ l.workshop.list = [{
     prereq: {res: ["woodplank"]},
     des: "Use wooden planks to gain extra space for sheds",
     log: "Sheds have been reinforced and a new design has been discovered!"
+    },{
+    name: "Steel axes",
+    id: "steelaxes",
+    time: 800,
+    cost: [{id: "steel", val: 10}],
+    prereq: {res: ["woodplank"]},
+    des: "Steel axes are stronger, lighter and faster",
+    log: "I am in awe at how poweful these axes have become"
     },{
     name: "H@CK3R",
     id: "H@CK3R",

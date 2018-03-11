@@ -146,7 +146,7 @@ l.explore.list = [{
     },{
     name: "Caves",
     id: "coalcave",
-    pos: [-6,-8],
+    pos: [-5,-8],
     time: 500,
     cost: [{id: "water", val: 2000}],
     visprereq: {explore: ["mountains3"]},
