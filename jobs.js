@@ -244,6 +244,7 @@ l.jobs.setjob = function(jobid){
 
 //do the job
 l.jobs.do = function(timelapsed){
+    var x;
     x = this.cur;
     if (timelapsed==undefined){
         timelapsed = 1;
