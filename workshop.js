@@ -138,7 +138,7 @@ l.workshop.list = [{
     log: "I'll just go and gather more leaves for my rain collectors.."
     },{
     name: "Condensed fertiliser",
-    id: "meatballmain",
+    id: "condensedfertiliser",
     time: 200,
     cost: [{id: "cookedmeat", val: 200}],
     prereq: {minres: [{id: "cookedmeat", val: 150}]},

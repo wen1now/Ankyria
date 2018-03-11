@@ -78,7 +78,7 @@ l.buildings.list = [{
     get: [{id: "wood", val: 0.05, getmul: function(){
         m = 1;
         fsboost = 0.1;
-        if (l.workshop.get("advancedfertiliser").bought){fsboost+=0.4}
+        if (l.workshop.get("condensedfertiliser").bought){fsboost+=0.4}
         m += l.buildings.get("fertilisestation").num * fsboost;
         if (l.workshop.get("ironwoodjets").bought){m += l.buildings.get("waterbowl").num*l.buildings.get("raincol").num*0.01}
         return m;
