@@ -195,6 +195,22 @@ l.buildings.list = [{
         return m;
     }
     },{
+    id: "plankstorage",
+    time: 10,
+    basecost: [{id: "woodplank", val: 10}],
+    prereq: {workshop: ["woodplanksheds"]},
+    des: "Build a basic storage using wooden planks",
+    ratio: 1.2,
+    get: [
+        {id: "waterCap", val: 50},
+        {id: "woodCap", val: 50},
+        {id: "ironCap", val: 5},
+        {id: "oreCap", val: 5},
+        {id: "rawmeatCap", val: 5},
+        {id: "cookedmeatCap", val: 5},
+        {id: "coalCap", val: 5}
+    ],
+    },{
     id: "furnace",
     time: 60,
     basecost: [{id: "iron", val: 25}],
@@ -250,6 +266,11 @@ l.buildings.setup = function(){
             if (this.prereq.res){
                 for (var j in this.prereq.res){
                     if (l.res.get(this.prereq.res[j]).num==0){unlocked = false}
+                }
+            }
+            if (this.prereq.workshop){
+                for (var j in this.prereq.workshop){
+                    if (!l.workshop.get(this.prereq.workshop[j]).bought){unlocked = false}
                 }
             }
             if (unlocked){this.vis = true};

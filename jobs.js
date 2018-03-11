@@ -16,11 +16,11 @@ l.jobs.list = [{
     id: "smalltreecut",
     time: 5,
     get: [{id: "wood", val: 3, updmul: function(){
-        var val = 1;
-        if (l.workshop.get("woodhatchet").bought){val+=0.2};
-        if (l.workshop.get("ironaxes").bought){val+=2.1};
-        val+=l.buildings.get("rangerstation").num;
-        return val;
+        var m = 1;
+        if (l.workshop.get("woodhatchet").bought){m+=0.2};
+        m+=l.buildings.get("rangerstation").num;
+        if (l.workshop.get("ironaxes").bought){m*=2.1};
+        return m;
     }}],
     settime: function(){
         time = 5;
@@ -34,11 +34,11 @@ l.jobs.list = [{
     id: "mediumtreecut",
     time: 60,
     get: [{id: "wood", val: 40, updmul: function(){
-        var val = 1;
-        if (l.workshop.get("woodhatchet").bought){val+=0.2};
-        if (l.workshop.get("ironaxes").bought){val+=2};
-        val+=l.buildings.get("rangerstation").num;
-        return val;
+        var m = 1;
+        if (l.workshop.get("woodhatchet").bought){m+=0.2};
+        m+=l.buildings.get("rangerstation").num;
+        if (l.workshop.get("ironaxes").bought){m*=2};
+        return m;
     }}],
     settime: function(){
         time = 60;
@@ -52,9 +52,10 @@ l.jobs.list = [{
     id: "bigtreecut",
     time: 300,
     get: [{id: "wood", val: 300, updmul: function(){
-        var val = 1;
-        val+=l.buildings.get("rangerstation").num;
-        return val;
+        var m = 1;
+        m+=l.buildings.get("rangerstation").num;
+        if (l.workshop.get("ironaxes").bought){m*=2};
+        return m;
     }}],
     settime: function(){
         time = 300;
@@ -276,6 +277,12 @@ l.jobs.do = function(timelapsed){
             l.topbarjoblooks();
         }
     }
+}
+
+l.jobs.notcanceled = true;
+l.jobs.clickcanceljob = function(){
+    l.jobs.notcanceled = false;
+    l.jobs.canceljob();
 }
 
 l.jobs.canceljob = function(){

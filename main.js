@@ -180,7 +180,6 @@ l.display = function(input){
     } 
 };
 
-
 //--------------------------------------------------
 //topbar stuff, jobs etc. etc.
 l.topbarjoblooks = function(fromtick,onload){
@@ -221,7 +220,10 @@ l.topbarjoblooks = function(fromtick,onload){
         if (l.jobs.next.type == "building"){
             x.innerHTML += "Building: "+l.jobs.next.name;
         }
-        x.innerHTML += "<div id='canceljob' onclick='l.jobs.canceljob()'>Cancel current job</div>"
+        x.innerHTML += "<div id='canceljob' onclick='l.jobs.clickcanceljob()'>Cancel current job</div>";
+        if (l.jobs.notcanceled){
+            document.getElementById('canceljob').innerHTML += " [This is a button]"
+        }
     } else {x.innerHTML = ""}
 }
 

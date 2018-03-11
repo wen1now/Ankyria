@@ -7,7 +7,8 @@ l.workshop.list = [{
     cost: [{id: "wood", val: 20},{id: "water", val: 10}],
     prereq: {explore: ["forest"]},
     des: "Put buckets on logs. Now you can carry more at once.",
-    log: "It was tough work; now I can carry more water at once."
+    log: "It was tough work; now I can carry more water at once.",
+    effect: "Water collecting = 2"
     },{
     name: "Walking stick",
     id: "walkingstick",
@@ -15,7 +16,8 @@ l.workshop.list = [{
     cost: [{id: "wood", val: 150}],
     prereq: {explore: ["forest"]},
     des: "Try to chop wood into the perfect walking stick.",
-    log: "This walking stick should enable me to explore faster"
+    log: "This walking stick should enable me to explore faster",
+    effect: "Exploration speed + 0.5"
     },{
     name: "Better walking stick",
     id: "walkingstick2",
@@ -23,7 +25,8 @@ l.workshop.list = [{
     cost: [{id: "wood", val: 300}],
     prereq: {workshop: ["walkingstick"]},
     des: "Try to chop wood into the perfect walking stick.",
-    log: "This walking stick should enable me to explore even faster"
+    log: "This walking stick should enable me to explore even faster",
+    effect: "Exploration speed + 0.5"
     },{
     name: "Even better WS",
     id: "walkingstick3",
@@ -31,7 +34,8 @@ l.workshop.list = [{
     cost: [{id: "wood", val: 500}],
     prereq: {workshop: ["walkingstick2"]},
     des: "Try to chop wood into the perfect walking stick.",
-    log: "This walking stick should enable me to explore even more faster"
+    log: "This walking stick should enable me to explore even more faster",
+    effect: "Exploration speed + 0.5"
     },{
     name: "Excellent WS",
     id: "walkingstick4",
@@ -39,7 +43,8 @@ l.workshop.list = [{
     cost: [{id: "wood", val: 700}],
     prereq: {workshop: ["walkingstick3"]},
     des: "Try to chop wood into the perfect walking stick.",
-    log: "This walking stick should enable me to explore even more fasterer"
+    log: "This walking stick should enable me to explore even more fasterer",
+    effect: "Exploration speed + 0.5"
     },{
     name: "Wooden pickaxe",
     id: "woodpick",
@@ -47,7 +52,8 @@ l.workshop.list = [{
     cost: [{id: "wood", val: 350}],
     prereq: {explore: ["deepforest","deepdesert"]},
     des: "Make a pickaxe to mine some of those ores from the mine",
-    log: "Time to get mining!"
+    log: "Time to get mining!",
+    effect: "Unlock Mines (exploration)"
     },{
     name: "Wooden hatchet",
     id: "woodhatchet",
@@ -55,7 +61,8 @@ l.workshop.list = [{
     cost: [{id: "wood", val: 300}],
     prereq: {explore: ["deepforest"]},
     des: "Make a wooden hatchet to make the going just that little bit easier",
-    log: "This hatchet is great! Now I can clear paths in no time"
+    log: "This hatchet is great! Now I can clear paths in no time",
+    effect: "Small, medium woodcutting + .2"
     },{
     name: "Wooden tools",
     id: "woodtools",
@@ -63,7 +70,8 @@ l.workshop.list = [{
     cost: [{id: "wood", val: 250}],
     prereq: {explore: ["jungle"]},
     des: "Make wooden tools to speed up constructions",
-    log: "I guess workshop and building times should be decreased"
+    log: "I guess workshop and building times should be decreased",
+    effect: "Workshop speed = 2"
     },{
     name: "More powerful wooden tools",
     id: "woodtools2",
@@ -71,7 +79,8 @@ l.workshop.list = [{
     cost: [{id: "wood", val: 500}],
     prereq: {workshop: ["woodtools"]},
     des: "Make wooden tools to speed up constructions more",
-    log: "These tools are extremely powerful!"
+    log: "These tools are extremely powerful!",
+    effect: "Workshop speed = 3"
     },{
     name: "Lighter small axes",
     id: "lightsmallaxes",
@@ -79,7 +88,8 @@ l.workshop.list = [{
     cost: [{id: "wood", val: 200}],
     prereq: {explore: ["jungle"]},
     des: "Make your smalleset axes lighter to reduce time to chop small trees",
-    log: "These small axes are so light!"
+    log: "These small axes are so light!",
+    effect: "Woodcutting time = 3"
     },{
     name: "Lighter medium axes",
     id: "lightmediumaxes",
@@ -87,7 +97,8 @@ l.workshop.list = [{
     cost: [{id: "wood", val: 200}],
     prereq: {explore: ["jungle"]},
     des: "Make your smallest axes lighter to reduce time to chop medium trees",
-    log: "These medium axes are so light!"
+    log: "These medium axes are so light!",
+    effect: "Larger woodcutting time = 30"
     },{
     name: "Lighter big axes",
     id: "lightbigaxes",
@@ -95,7 +106,8 @@ l.workshop.list = [{
     cost: [{id: "wood", val: 200}],
     prereq: {explore: ["jungle"]},
     des: "Make your biggest axes lighter to reduce time to chop large trees",
-    log: "These large axes are so light!"
+    log: "These large axes are so light!",
+    effect: "Big woodcutting time = 150"
     },{
     name: "Lightweight spears",
     id: "lightspears",
@@ -103,7 +115,8 @@ l.workshop.list = [{
     cost: [{id: "wood", val: 300}],
     prereq: {explore: ["deepforest"]},
     des: "Make lightweight spears for faster hunting",
-    log: "Now with this upgrade, hunting will be faster"
+    log: "Now with this upgrade, hunting will be faster",
+    effect: "Larger woodcutting speed = 3"
     },{
     name: "Leaf collecter",
     id: "leafcol",
@@ -194,7 +207,8 @@ l.workshop.list = [{
     cost: [{id: "iron", val: 10}],
     prereq: {res: ["iron"]},
     des: "Make buckets out of iron; this will make them larger and carry more",
-    log: "Bucketation successful; buckets will carry bundles more water"
+    log: "Bucketation successful; buckets will carry bundles more water",
+    effect: "Water collecting = 10"
     },{
     name: "Iron pickaxes",
     id: "ironpicks",
@@ -210,7 +224,8 @@ l.workshop.list = [{
     cost: [{id: "iron", val: 10}],
     prereq: {res: ["iron"]},
     des: "Infuse workshop tools with iron; make tools faster",
-    log: "Infusation successful; workshop times are faster"
+    log: "Infusation successful; workshop times are faster",
+    effect: ["Workshop speed = 5","Building speed = 1.4","Unlock wooden planks"]
     },{
     name: "Iron hammers",
     id: "ironhammers",
@@ -218,7 +233,8 @@ l.workshop.list = [{
     cost: [{id: "iron", val: 10}],
     prereq: {res: ["iron"]},
     des: "Infuse building tools with iron; make building buildings faster",
-    log: "Infusation successful; buildins times are faster"
+    log: "Infusation successful; building times are faster",
+    effect: "Building speed = 3"
     },{
     name: "Iron stick",
     id: "ironstick",
@@ -297,7 +313,7 @@ l.workshop.list = [{
     cost: [{id: "woodplank", val: 20}],
     prereq: {res: ["woodplank"]},
     des: "Use wooden planks to gain extra space for sheds",
-    log: "Sheds have been further reinforced."
+    log: "Sheds have been reinforced and a new design has been discovered!"
     },{
     name: "H@CK3R",
     id: "H@CK3R",

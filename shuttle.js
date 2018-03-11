@@ -96,7 +96,7 @@ l.res.setup = function(){
             this.quickvis = !this.quickvis;
         }
         this.list[i].setgain = function(){
-            var gain = 0;
+            var gain = 0; oldgain = this.gain;
             for (var j in l.buildings.list){
                 if (l.buildings.list[j].get){
                     for (var k in l.buildings.list[j].get){
@@ -112,7 +112,10 @@ l.res.setup = function(){
                         }
                     }
                 }
+            }
             this.gain = gain;
+            if (gain!=oldgain && l.tabs.curtab=="shuttle"){
+                l[l.tabs.curtab].draw();
             }
         }
         this.list[i].get = function(amount){
