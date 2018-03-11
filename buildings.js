@@ -100,7 +100,7 @@ l.buildings.list = [{
     },{
     id: "bonfire",
     time: 10,
-    basecost: [{id: "wood", val: 10}],
+    basecost: [{id: "wood", val: 100}],
     prereq: {explore: ["plainscen"]},
     des: "Roast animal meat automatically",
     convert: true,
@@ -138,7 +138,7 @@ l.buildings.list = [{
     },{
     id: "smelter",
     time: 30,
-    basecost: [{id: "wood", val: 100}],
+    basecost: [{id: "wood", val: 500}],
     prereq: {res: ["ore"]},
     des: "Convert ores to the minerals",
     convert: true,
