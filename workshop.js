@@ -137,6 +137,14 @@ l.workshop.list = [{
     des: "Collecting more leaves makes rain collectors faster and they can also store water",
     log: "I'll just go and gather more leaves for my rain collectors.."
     },{
+    name: "Condensed fertiliser",
+    id: "meatballmain",
+    time: 200,
+    cost: [{id: "cookedmeat", val: 200}],
+    prereq: {minres: [{id: "cookedmeat", val: 150}]},
+    des: "Vastly improve the effect of fertiliser stations on wood farms",
+    log: "Condensed fertiliser is quite powerful"
+    },{
     name: "Meatball sandwich",
     id: "meatballmain",
     time: 200,
@@ -316,7 +324,31 @@ l.workshop.list = [{
     des: "Use wooden planks to gain extra space for sheds",
     log: "Sheds have been reinforced and a new design has been discovered!"
     },{
-    name: "Steel axes",
+    name: "Steel small axes",
+    id: "steelsmallaxes",
+    time: 800,
+    cost: [{id: "steel", val: 10}],
+    prereq: {res: ["steel"]},
+    des: "Small steel axes are stronger, lighter and faster",
+    log: "I am in awe at how poweful these axes have become"
+    },{
+    name: "Steel medium axes",
+    id: "steelmediumaxes",
+    time: 800,
+    cost: [{id: "steel", val: 10}],
+    prereq: {res: ["steel"]},
+    des: "Medium steel axes are stronger, lighter and faster",
+    log: "I am in awe at how poweful these axes have become"
+    },{
+    name: "Steel big axes",
+    id: "steelbigaxes",
+    time: 800,
+    cost: [{id: "steel", val: 10}],
+    prereq: {res: ["steel"]},
+    des: "Big steel axes are stronger, lighter and faster",
+    log: "I am in awe at how poweful these axes have become"
+    },{
+    name: "Steel sheds",
     id: "steelaxes",
     time: 800,
     cost: [{id: "steel", val: 10}],

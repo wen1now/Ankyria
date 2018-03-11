@@ -20,13 +20,13 @@ l.jobs.list = [{
         if (l.workshop.get("woodhatchet").bought){m+=0.2};
         m+=l.buildings.get("rangerstation").num;
         if (l.workshop.get("ironaxes").bought){m*=2.1};
-        if (l.workshop.get("steelaxes").bought){m*=2};
+        if (l.workshop.get("steelsmallaxes").bought){m*=2};
         return m;
     }}],
     settime: function(){
         time = 5;
         if (l.workshop.get("lightsmallaxes").bought){time=3};
-        if (l.workshop.get("steelaxes").bought){time=1};
+        if (l.workshop.get("steelsmallaxes").bought){time=1};
         this.time = time;
     },
     prereq: {explore: ["forest"]},
@@ -40,13 +40,13 @@ l.jobs.list = [{
         if (l.workshop.get("woodhatchet").bought){m+=0.2};
         m+=l.buildings.get("rangerstation").num;
         if (l.workshop.get("ironaxes").bought){m*=2};
-        if (l.workshop.get("steelaxes").bought){m*=3};
+        if (l.workshop.get("steelmediumaxes").bought){m*=3};
         return m;
     }}],
     settime: function(){
         time = 60;
         if (l.workshop.get("lightmediumaxes").bought){time=30};
-        if (l.workshop.get("steelaxes").bought){time=5};
+        if (l.workshop.get("steelmediumaxes").bought){time=5};
         this.time = time;
     },
     prereq: {explore: ["deepforest"]},
@@ -59,13 +59,13 @@ l.jobs.list = [{
         var m = 1;
         m+=l.buildings.get("rangerstation").num;
         if (l.workshop.get("ironaxes").bought){m*=2};
-        if (l.workshop.get("steelaxes").bought){m*=3};
+        if (l.workshop.get("steelbigaxes").bought){m*=3};
         return m;
     }}],
     settime: function(){
         time = 300;
         if (l.workshop.get("lightbigaxes").bought){time=150};
-        if (l.workshop.get("steelaxes").bought){time=40};
+        if (l.workshop.get("steelbigaxes").bought){time=40};
         this.time = time;
     },
     prereq: {explore: ["jungle"]},
