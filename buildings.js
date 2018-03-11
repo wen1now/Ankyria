@@ -62,9 +62,9 @@ l.buildings.list = [{
     ],
     getallgetmul: function(){
         m = 1;
-        if (l.workshop.get("plainsheds").bought){m += 0.3}
-        if (l.workshop.get("ironsheds").bought){m += 0.5}
-        if (l.workshop.get("woodplanksheds").bought){m += 0.3}
+        if (l.workshop.get("plainsheds").bought){m += 0.5}
+        if (l.workshop.get("ironsheds").bought){m += 1}
+        if (l.workshop.get("woodplanksheds").bought){m += 0.5}
         return m;
     }
     },{
