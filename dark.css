@@ -37,6 +37,13 @@ html,body {
     float: right;
 }
 
+#changelog {
+    font-size: 12pt;
+    display: inline-block;
+    float: right;
+    margin-right: 6px;
+}
+
 #topbar {
     float: top;
     width: 100%;
@@ -249,8 +256,8 @@ Rightside stuff*/
 #tooltip {
     width: 140px;
     padding: 5px;
-    border: 1px solid black;
-    background-color: #dddddd;
+    border: 1px solid #777;
+    background-color: #333;
  
     /* Position the tooltip text - see examples below! */
     position: fixed;

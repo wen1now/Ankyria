@@ -16,6 +16,13 @@ html,body {
     float: right;
 }
 
+#changelog {
+    font-size: 12pt;
+    display: inline-block;
+    float: right;
+    margin-right: 6px;
+}
+
 #topbar {
     float: top;
     width: 100%;
