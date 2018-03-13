@@ -20,7 +20,8 @@ l.draw = function(){//basically load the game to look like what it's supposed to
     x.innerHTML = "<div id='topbar'></div><div id='logCont'><div id='logHead'>Log</div><div id='log'></div></div> <div id='middle'><div id='tabbar'></div><div id='maingame'></div></div><div id='sidebar'></div>";
     x.innerHTML += "<div id='exportbox' class='exportbox'><div>Copy the following text:</div><textarea id='exporttext'></textarea><button onclick='l.export()' class='closepopup'>X</button></div>";
     x.innerHTML += "<div id='importbox' class='exportbox'><div>Paste into the following box</div><textarea id='importtext'></textarea><button onclick='l.import()'>Import</button><button onclick='l.importtoggle()' class='closepopup'>X</button></div>";
-    x.innerHTML += "<div id='tooltip'></div>"
+    x.innerHTML += "<div id='tooltip'></div>";
+    l.hidetooltip();
     l.logstuff.update();
     l.tabs.draw();
     l.calendar.draw();
@@ -64,6 +65,23 @@ l.tabs.list = [[{
     link: "buildings",
     checkprereq: function(){
         if (l.explore.get("forest").bought){this.vis = true}
+    }
+    }],[{
+    name: "Census",
+    des: "Count people statistics here",
+    link: "population",
+    vis: true
+    },{
+    name: "Jobs",
+    des: "Give people jobs to do",
+    link: "people_jobs",
+    vis: true
+    },{
+    name: "Religion",
+    des: "Establish a religion to provide faith in stuff",
+    link: "religion",
+    checkprereq: function(){
+        if (l.res.get("wood").num>10000){this.vis = true}
     }
     }]
 ]
@@ -111,10 +129,11 @@ l.tabs.metatabs.setup = function(){
 l.tabs.draw = function(){
     document.getElementById("tabbar").innerHTML = "<div class='tabbars' id='metatabbar'></div><div class='tabbars' id='normaltabbar'></div>";
     x=document.getElementById("metatabbar");
+    x.innerHTML = "";
     if (l.tabs.metatabs.vis){
-        for (var i in selected_list){
+        for (var i in l.tabs.metalist){
             if (selected_list[i].vis){
-                x.innerHTML+="<div><button class='tabBut' onclick='l.tabs.list["+i+"].settab()'>"+this.list[i].name+"</button></div>";
+                x.innerHTML+="<div><button class='tabBut' onclick='l.tabs.list["+i+"][0].settab()'>"+l.tabs.metalist[i].name+"</button></div>";
             }
         }
     }
