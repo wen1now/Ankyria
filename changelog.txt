@@ -1,4 +1,8 @@
 0.0.2
+13/03
+- A bunch of upgrades added over the last few days
+- Storages should be slightly more gettable
+
 10/03/18
 - Water storage balances for early game
 

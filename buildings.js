@@ -200,10 +200,10 @@ l.buildings.list = [{
     },{
     id: "plankstorage",
     time: 10,
-    basecost: [{id: "woodplank", val: 10}],
+    basecost: [{id: "woodplank", val: 25}],
     prereq: {workshop: ["woodplanksheds"]},
     des: "Build a basic storage using wooden planks, for wood",
-    ratio: 1.2,
+    addRatio: 0.3,
     get: [
         {id: "waterCap", val: 50},
         {id: "woodCap", val: 300},
@@ -299,7 +299,8 @@ l.buildings.setup = function(){
         }
         this.list[i].costmul = 1;
         this.list[i].updcostmultiplier = function(){
-            this.costmul = Math.pow(this.ratio,this.num);
+            if (this.ratio){this.costmul = Math.pow(this.ratio,this.num)}
+            if (this.addRatio){this.costmul = this.addRatio*this.num+1}
         }
         for (var j in this.list[i].get){
             this.list[i].get[j].baseval = this.list[i].get[j].val;
