@@ -349,12 +349,12 @@ l.workshop.list = [{
     log: "I am in awe at how poweful these axes have become"
     },{
     name: "Steel sheds",
-    id: "steelaxes",
+    id: "steelsheds",
     time: 800,
     cost: [{id: "steel", val: 10}],
-    prereq: {res: ["woodplank"]},
-    des: "Steel axes are stronger, lighter and faster",
-    log: "I am in awe at how poweful these axes have become"
+    prereq: {res: ["steel"]},
+    des: "Steel sheds are much sturdier and therefore larger",
+    log: "I guess this is it then.."
     },{
     name: "H@CK3R",
     id: "H@CK3R",
