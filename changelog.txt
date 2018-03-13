@@ -1,3 +1,8 @@
+0.0.2.0.1
+13/03
+- Decided to log every update, no matter how small (so I need five places)
+- Changed price growth rate of wooden plank storages to be linear not exponential (!)
+
 0.0.2
 13/03
 - A bunch of upgrades added over the last few days
