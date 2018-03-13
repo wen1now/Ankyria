@@ -555,6 +555,31 @@ job stuff*/
 /*---------------------------------------------
 Workshop */
 
+#workshoptabbar {
+    float: left;
+    display: inline-block;
+    width: 100%;
+}
+
+.workshoptab {
+    background-color: #806533;
+    float: left;
+    display: inline-block;
+    width: 120px;
+    margin-left: 10px; /*probs style this more later*/
+    margin-bottom: 2px;
+    font-size: 14pt;
+    border: 3px solid black;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+    color: #113;
+}
+
+.workshoptab:active {
+    background-color: #604513;
+}
+
 .workshopitem {
     float: top;
     border-radius: 8px;

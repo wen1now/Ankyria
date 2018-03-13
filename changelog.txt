@@ -1,3 +1,6 @@
+0.0.2.1
+- You can now see workshop bought items! Hooray!
+
 0.0.2.0.1
 13/03
 - Decided to log every update, no matter how small (so I need five places)
