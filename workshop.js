@@ -470,7 +470,7 @@ l.workshop.finished = function(id){
     } else {
         l.log("I researched "+item.name+" today.");
     }
-    l.workshop.lastbought = id;
+    l.workshop.lastBought = id;
     l.updateall();
 }
 
@@ -509,8 +509,8 @@ l.workshop.drawTabbar = function(){
         x.innerHTML = "";
         var toadd = "<div id='workshoptabbar'><div onclick='l.workshop.changeScreenBuyable()' class='workshoptab'>Unlocked</div>";
         toadd+="<div onclick='l.workshop.changeScreenBought()' class='workshoptab'>Bought</div>";
-        if (l.workshop.lastBought != undefined){toadd+="<div onclick='l.workshop.changeScreenSingle()' class='workshoptab'>View last</div>";}
-        toadd += "</div>"
+        if (l.workshop.lastBought != undefined){toadd+="<div onclick='l.workshop.changeScreenSingle()' class='workshoptab'>Last bought</div>"}
+        toadd += "</div>";
         x.innerHTML += toadd;
     }
 }

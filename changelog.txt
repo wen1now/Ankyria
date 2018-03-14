@@ -1,8 +1,11 @@
-0.0.2.2 14/03
+0.0.2.2.1
+- Yet another minor bug (something just wasn't showing up)
+
+0.0.2.2  14/03
 - Now the bought items are clickable for additional details!
 - Also made exploration area 'take up all the available room' as requested
 
-0.0.2.1 13/03
+0.0.2.1  13/03
 - You can now see workshop bought items! Hooray!
 
 0.0.2.0.1
