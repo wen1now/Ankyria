@@ -470,6 +470,7 @@ l.workshop.finished = function(id){
     } else {
         l.log("I researched "+item.name+" today.");
     }
+    l.workshop.lastbought = id;
     l.updateall();
 }
 
@@ -491,6 +492,8 @@ l.workshop.draw = function(){
         l.workshop.drawBuyable();
     } else if (l.workshop.currentScreen == 'bought'){
         l.workshop.drawBought();
+    } else if (l.workshop.currentScreen == 'single'){
+        l.workshop.drawSingle(l.workshop.singleId);
     }
 }
 
@@ -505,7 +508,9 @@ l.workshop.drawTabbar = function(){
         x = document.getElementById("maingame");
         x.innerHTML = "";
         var toadd = "<div id='workshoptabbar'><div onclick='l.workshop.changeScreenBuyable()' class='workshoptab'>Unlocked</div>";
-        toadd+="<div onclick='l.workshop.changeScreenBought()' class='workshoptab'>Bought</div></div>";
+        toadd+="<div onclick='l.workshop.changeScreenBought()' class='workshoptab'>Bought</div>";
+        if (l.workshop.lastBought != undefined){toadd+="<div onclick='l.workshop.changeScreenSingle()' class='workshoptab'>View last</div>";}
+        toadd += "</div>"
         x.innerHTML += toadd;
     }
 }
@@ -520,12 +525,21 @@ l.workshop.changeScreenBought = function(){
     l.workshop.drawBought();
 }
 
+l.workshop.changeScreenSingle = function(){
+    l.workshop.currentScreen='single';
+    if (l.workshop.lastBought==undefined){
+        l.workshop.drawSingle(l.workshop.singleId)
+    } else {
+        l.workshop.drawSingle(l.workshop.lastBought)
+    }
+}
+
 l.workshop.drawBuyable = function(){
     l.workshop.drawTabbar()
     x = document.getElementById("maingame");
     for (var i in this.list){
         if ((this.list[i].vis) && !(this.list[i].bought)){
-            x.innerHTML += "<div class='workshopitem' id='workshop"+this.list[i].id+"' onclick = 'l.workshop.do(\""+this.list[i].id+"\")'></div>";
+            x.innerHTML += "<div class='workshopitem workshopclickable' id='workshop"+this.list[i].id+"' onclick = 'l.workshop.do(\""+this.list[i].id+"\")'></div>";
             y = document.getElementById("workshop"+this.list[i].id);
             y.innerHTML += "<div class='workshopitemtitle'>"+this.list[i].name+"</div>";
             y.innerHTML += "<div class='workshopitemtime'>Time: "+l.display(this.list[i].time/l.workshop.globalspeedboost)+"</div>";
@@ -540,18 +554,39 @@ l.workshop.drawBuyable = function(){
 }
 
 l.workshop.drawBought = function(){
-    l.workshop.drawTabbar()
+    l.workshop.drawTabbar();
     x = document.getElementById("maingame");
     for (var i in this.list){
         if ((this.list[i].vis) && (this.list[i].bought)){
-            x.innerHTML += "<div class='workshopboughtitem' id='workshop"+this.list[i].id+"'></div>";
+            x.innerHTML += "<div class='workshopboughtitem workshopclickable' id='workshop"+this.list[i].id+"' onclick='l.workshop.drawSingle(\""+this.list[i].id+"\")'></div>";
             y = document.getElementById("workshop"+this.list[i].id);
             y.innerHTML += "<div class='workshopitemtitle'>"+this.list[i].name+"</div>";
             if (this.list[i].effect){
-                y.innerHTML += "<div class='workshopitemeffect'>"+this.list[i].effect.join('<br>')+"</div>"}
+                y.innerHTML += "<div class='workshopitemeffect'>"+this.list[i].effect.join('<br>')+"</div>"
+            }
         }
     }
     x.innerHTML += '<div><b>Note:</b> multiplier multiplies by 5 DOES NOT GUARANTEE a production increase of 5 - contact me if you really wanna know why.</div>';
+}
+
+l.workshop.drawSingle = function(id){
+    l.workshop.singleId = id;
+    l.workshop.drawTabbar();
+    x = document.getElementById("maingame");
+    var z = l.workshop.get(id);
+    x.innerHTML += "<div class='workshopitem' id='workshop"+z.id+"'></div>";
+    y = document.getElementById("workshop"+z.id);
+    y.innerHTML += "<div class='workshopitemtitle'>"+z.name+"</div>";
+    y.innerHTML += "<div class='workshopitemtime'>Time: "+l.display(z.time/l.workshop.globalspeedboost)+"</div>";
+    costgrid = "";
+    for (var j in z.cost){
+        costgrid += "<div class='jobitemcostitem'>"+z.cost[j].name+": "+(z.cost[j].val*z.cost[j].mul)+"</div>";
+    }
+    if (costgrid!==""){y.innerHTML += "<div class='workshopitembox workshopitemcostgrid'><div class='workshopitemlistcaption'>Cost:</div>"+costgrid+"</div>";}
+    y.innerHTML += "<div class='workshopitemdes'>"+z.des+"</div>";
+    if (z.effect){
+        y.innerHTML += "<div class='workshopitemeffect'><b>Effect:</b> "+z.effect.join('<br>')+"</div>"
+    }
 }
 
 

@@ -580,6 +580,28 @@ Workshop */
     background-color: #604513;
 }
 
+.workshopboughtitem {
+    float: top;
+    border-radius: 8px;
+    background-color: #806533;
+    display: inline-block;
+    width: 28%;
+    margin: 10px 5px;
+    border: solid black;
+    padding: 5px 5px 10px;
+    color: #cbbba8;
+    padding-left: 10px;
+}
+
+.workshopclickable:active {
+    background-color: #604513;
+}
+
+.workshopclickable {
+    cursor: pointer;   
+}
+
+
 .workshopitem {
     float: top;
     border-radius: 8px;
@@ -589,13 +611,8 @@ Workshop */
     margin: 10px 5px;
     border: solid black;
     padding: 5px 5px 10px;
-    cursor: pointer;
     color: #cbbba8;
     padding-left: 10px;
-}
-
-.workshopitem:active {
-    background-color: #604513;
 }
 
 .workshopitemlistcaption {
