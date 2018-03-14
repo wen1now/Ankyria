@@ -1,7 +1,8 @@
-0.0.2.2
+0.0.2.2 14/03
 - Now the bought items are clickable for additional details!
+- Also made exploration area 'take up all the available room' as requested
 
-0.0.2.1
+0.0.2.1 13/03
 - You can now see workshop bought items! Hooray!
 
 0.0.2.0.1
@@ -22,6 +23,8 @@
 - Balanced more stuff to speed things up more
 * Allowed queueing of a second job
 - Revamped more balancing
+
+Kinda went on a hiatus here
 
 08/03/18
 - Rebalanced stuffs (lower exploration times, cheaper storages)
