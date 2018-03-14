@@ -23,6 +23,18 @@ html,body {
     margin-right: 6px;
 }
 
+#changelogpopup {
+    width: 300px;
+    height: 210px;
+    border: 2px solid black;
+    top: 30px;
+    right: 80px;
+    position: fixed;
+    visibility: hidden;
+    background-color: white;
+    padding: 10px;
+}
+
 #topbar {
     float: top;
     width: 100%;
@@ -300,7 +312,7 @@ shuttle stuff*/
 }
 
 .shuttleReslistName {
-    width: 100px;
+    width: 120px;
     float: left;
 }
 

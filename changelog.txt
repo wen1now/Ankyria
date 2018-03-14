@@ -1,3 +1,10 @@
+0.0.2.2.3
+- Chucked another link to the changelog in!
+- Restyled a bit of stuff
+
+0.0.2.2.2
+- Another minor bug again :(
+
 0.0.2.2.1
 - Yet another minor bug (something just wasn't showing up)
 
