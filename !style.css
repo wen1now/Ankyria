@@ -23,6 +23,18 @@ html,body {
     margin-right: 6px;
 }
 
+#changelogpopup {
+    width: 300px;
+    height: 210px;
+    border: 2px solid black;
+    top: 30px;
+    right: 80px;
+    position: fixed;
+    visibility: hidden;
+    background-color: white;
+    padding: 10px;
+}
+
 #topbar {
     float: top;
     width: 100%;
@@ -300,7 +312,7 @@ shuttle stuff*/
 }
 
 .shuttleReslistName {
-    width: 100px;
+    width: 120px;
     float: left;
 }
 
@@ -350,9 +362,7 @@ shuttle stuff*/
 /*-----------------------------------------*/
 /*explore stuff*/
 #explorebox {
-    width: 500px;
-    height: 500px;
-    overflow: auto;
+    overflow: none;
     position: relative;
 }
 
@@ -417,19 +427,6 @@ shuttle stuff*/
 
 /*----------------------------------
 job stuff*/
-
-#eatsnack {
-    float: top;
-    border: solid;
-    border-radius: 2px;
-    margin: 10px 5px;
-    padding: 5px 5px 10px;
-    display: inline-block;
-}
-
-#eatsnack:active {
-    background-color: #777;
-}
 
 .jobitem {
     float: top;
@@ -527,6 +524,53 @@ job stuff*/
 /*---------------------------------------------
 Workshop */
 
+#workshoptabbar {
+    float: left;
+    display: inline-block;
+    width: 100%;
+}
+
+.workshoptab {
+    background-color: #806533;
+    float: left;
+    display: inline-block;
+    width: 120px;
+    margin-left: 10px; /*probs style this more later*/
+    margin-bottom: 2px;
+    font-size: 14pt;
+    border: 3px solid black;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+    color: #113;
+}
+
+.workshoptab:active {
+    background-color: #604513;
+}
+
+.workshopboughtitem {
+    float: top;
+    border-radius: 8px;
+    background-color: #806533;
+    display: inline-block;
+    width: 28%;
+    margin: 10px 5px;
+    border: solid black;
+    padding: 5px 5px 10px;
+    color: #cbbba8;
+    padding-left: 10px;
+}
+
+.workshopclickable:active {
+    background-color: #604513;
+}
+
+.workshopclickable {
+    cursor: pointer;   
+}
+
+
 .workshopitem {
     float: top;
     border-radius: 8px;
@@ -536,13 +580,8 @@ Workshop */
     margin: 10px 5px;
     border: solid black;
     padding: 5px 5px 10px;
-    cursor: pointer;
     color: #cbbba8;
     padding-left: 10px;
-}
-
-.workshopitem:active {
-    background-color: #604513;
 }
 
 .workshopitemlistcaption {

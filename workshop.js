@@ -8,7 +8,7 @@ l.workshop.list = [{
     prereq: {explore: ["forest"]},
     des: "Put buckets on logs. Now you can carry more at once.",
     log: "It was tough work; now I can carry more water at once.",
-    effect: "Water collecting = 2"
+    effect: "Water collecting -> 2"
     },{
     name: "Walking stick",
     id: "walkingstick",
@@ -17,7 +17,7 @@ l.workshop.list = [{
     prereq: {explore: ["forest"]},
     des: "Try to chop wood into the perfect walking stick.",
     log: "This walking stick should enable me to explore faster",
-    effect: "Exploration speed + 0.5"
+    effect: "Exploration speed +.5"
     },{
     name: "Better walking stick",
     id: "walkingstick2",
@@ -26,7 +26,7 @@ l.workshop.list = [{
     prereq: {workshop: ["walkingstick"]},
     des: "Try to chop wood into the perfect walking stick.",
     log: "This walking stick should enable me to explore even faster",
-    effect: "Exploration speed + 0.5"
+    effect: "Exploration speed +.5"
     },{
     name: "Even better WS",
     id: "walkingstick3",
@@ -35,7 +35,7 @@ l.workshop.list = [{
     prereq: {workshop: ["walkingstick2"]},
     des: "Try to chop wood into the perfect walking stick.",
     log: "This walking stick should enable me to explore even more faster",
-    effect: "Exploration speed + 0.5"
+    effect: "Exploration speed +.5"
     },{
     name: "Excellent WS",
     id: "walkingstick4",
@@ -44,7 +44,7 @@ l.workshop.list = [{
     prereq: {workshop: ["walkingstick3"]},
     des: "Try to chop wood into the perfect walking stick.",
     log: "This walking stick should enable me to explore even more fasterer",
-    effect: "Exploration speed + 0.5"
+    effect: "Exploration speed +.5"
     },{
     name: "Wooden pickaxe",
     id: "woodpick",
@@ -62,7 +62,7 @@ l.workshop.list = [{
     prereq: {explore: ["deepforest"]},
     des: "Make a wooden hatchet to make the going just that little bit easier",
     log: "This hatchet is great! Now I can clear paths in no time",
-    effect: "Small, medium woodcutting + .2"
+    effect: "Small, medium woodcutting multiplier +.2"
     },{
     name: "Wooden tools",
     id: "woodtools",
@@ -71,7 +71,7 @@ l.workshop.list = [{
     prereq: {explore: ["jungle"]},
     des: "Make wooden tools to speed up constructions",
     log: "I guess workshop and building times should be decreased",
-    effect: "Workshop speed = 2"
+    effect: "Workshop speed -> 2"
     },{
     name: "More powerful wooden tools",
     id: "woodtools2",
@@ -80,7 +80,7 @@ l.workshop.list = [{
     prereq: {workshop: ["woodtools"]},
     des: "Make wooden tools to speed up constructions more",
     log: "These tools are extremely powerful!",
-    effect: "Workshop speed = 3"
+    effect: "Workshop speed -> 3"
     },{
     name: "Lighter small axes",
     id: "lightsmallaxes",
@@ -89,7 +89,7 @@ l.workshop.list = [{
     prereq: {explore: ["jungle"]},
     des: "Make your smalleset axes lighter to reduce time to chop small trees",
     log: "These small axes are so light!",
-    effect: "Woodcutting time = 3"
+    effect: "Woodcutting time -> 3"
     },{
     name: "Lighter medium axes",
     id: "lightmediumaxes",
@@ -98,7 +98,7 @@ l.workshop.list = [{
     prereq: {explore: ["jungle"]},
     des: "Make your smallest axes lighter to reduce time to chop medium trees",
     log: "These medium axes are so light!",
-    effect: "Larger woodcutting time = 30"
+    effect: "Medium woodcutting time -> 30"
     },{
     name: "Lighter big axes",
     id: "lightbigaxes",
@@ -107,7 +107,7 @@ l.workshop.list = [{
     prereq: {explore: ["jungle"]},
     des: "Make your biggest axes lighter to reduce time to chop large trees",
     log: "These large axes are so light!",
-    effect: "Big woodcutting time = 150"
+    effect: "Big woodcutting time -> 150"
     },{
     name: "Lightweight spears",
     id: "lightspears",
@@ -116,7 +116,7 @@ l.workshop.list = [{
     prereq: {explore: ["deepforest"]},
     des: "Make lightweight spears for faster hunting",
     log: "Now with this upgrade, hunting will be faster",
-    effect: "Larger woodcutting speed = 3"
+    effect: "Medium woodcutting speed -> 3"
     },{
     name: "Leaf collecter",
     id: "leafcol",
@@ -124,7 +124,8 @@ l.workshop.list = [{
     cost: [{id: "water", val: 1500}],
     prereq: {explore: ["deepforest"]},
     des: "Leaves make building rain collecters faster and improves collection area",
-    log: "I'll just go gather some leaves for my rain collecter..."
+    log: "I'll just go gather some leaves for my rain collecter...",
+    effect: "rain collecter multiplier += 2"
     },{
     name: "Leafier collecters",
     id: "leafcol2",
@@ -135,7 +136,8 @@ l.workshop.list = [{
         workshop: ["leafcol"]
     },
     des: "Collecting more leaves makes rain collectors faster and they can also store water",
-    log: "I'll just go and gather more leaves for my rain collectors.."
+    log: "I'll just go and gather more leaves for my rain collectors..",
+    effect: "rain collecter multiplier += 4"
     },{
     name: "Condensed fertiliser",
     id: "condensedfertiliser",
@@ -143,7 +145,8 @@ l.workshop.list = [{
     cost: [{id: "cookedmeat", val: 200}],
     prereq: {minres: [{id: "cookedmeat", val: 150}]},
     des: "Vastly improve the effect of fertiliser stations on wood farms",
-    log: "Condensed fertiliser is quite powerful"
+    log: "Condensed fertiliser is quite powerful",
+    effect: "Fertiliser stations wood farm boost is 5x more effective"
     },{
     name: "Meatball sandwich",
     id: "meatballmain",
@@ -151,7 +154,8 @@ l.workshop.list = [{
     cost: [{id: "cookedmeat", val: 50}],
     prereq: {res: ["cookedmeat"]},
     des: "Invent the meatball sandwich! This gives great energy over long distances",
-    log: "This sandwich will allow me to cut down on time and water for long-distance journeys"
+    log: "This sandwich will allow me to cut down on time and water for long-distance journeys",
+    effect: ["exporation speed +.5","exploration water divider +.2"]
     },{
     name: "Meatball snack",
     id: "meatballsnack",
@@ -159,7 +163,8 @@ l.workshop.list = [{
     cost: [{id: "cookedmeat", val: 100}, {id: "water", val: 3500}],
     prereq: {res: ["cookedmeat"]},
     des: "Invent the meatball snack! This gives jobs greater energy boosts",
-    log: "Jobs now give greater rewards, yay!"
+    log: "Jobs now give greater rewards, yay!",
+    effect: ["exploration water divider +.2","global jobs +.5"]
     },{
     name: "Salami burger",
     id: "salamimain",
@@ -167,7 +172,8 @@ l.workshop.list = [{
     cost: [{id: "cookedmeat", val: 150}],
     prereq: {workshop: ["meatballsnack","meatballmain"]},
     des: "Invent the salami burger! This gives massive energy over increased distances",
-    log: "Wow, these are tasty! I'm sure I can last longer on these"
+    log: "Wow, these are tasty! I'm sure I can last longer on these",
+    effect: "More exploration speed"
     },{
     name: "Salami bite",
     id: "salamisnack",
@@ -175,7 +181,8 @@ l.workshop.list = [{
     cost: [{id: "cookedmeat", val: 200}, {id: "water", val: 8500}],
     prereq: {workshop: ["meatballsnack","meatballmain"]},
     des: "Invent salami bites! These morsels can give massive energy",
-    log: "Jobs now give even greater rewards, yay!"
+    log: "Jobs now give even greater rewards, yay!",
+    effect: ["More exploration speed","global jobs +.5"]
     },{
     name: "Plain sheds",
     id: "plainsheds",
@@ -183,7 +190,8 @@ l.workshop.list = [{
     cost: [{id: "wood", val: 1000},{id: "water", val: 3000}],
     prereq: {explore: ["plainscen"]},
     des: "Build larger sheds on the plains instead of at home",
-    log: "Hiked out and set up a work area for making sheds"
+    log: "Hiked out and set up a work area for making sheds",
+    effect: "Plain sheds amount increased"
     },{
     name: "Smelter piping",
     id: "smelterpipes",
@@ -191,7 +199,8 @@ l.workshop.list = [{
     cost: [{id: "wood", val: 1000}],
     prereq: {res: ["ore"]},
     des: "Build crude piping for smelters, thus improving smelter efficiency",
-    log: "Upgraded smelters"
+    log: "Upgraded smelters",
+    effect: "Smelter amount increased"
     },{
     name: "Iron sheds",
     id: "ironsheds",
@@ -199,7 +208,8 @@ l.workshop.list = [{
     cost: [{id: "iron", val: 10}],
     prereq: {res: ["iron"]},
     des: "Infuse some iron into those sheds to bump up storage amount (sheds will not cost iron)",
-    log: "Infusation successful; sheds are now iron-inforced"
+    log: "Infusation successful; sheds are now iron-inforced",
+    effect: "Shed storage amount increased"
     },{
     name: "Iron tipped axes",
     id: "ironaxes",
@@ -207,7 +217,8 @@ l.workshop.list = [{
     cost: [{id: "iron", val: 10}],
     prereq: {res: ["iron"]},
     des: "Infuse axes with iron; this will make axes last longer and be stronger",
-    log: "Infusation successful; axes will be more or less triple speed"
+    log: "Infusation successful; axes will be more or less triply effective",
+    effect: "Axe amount increase"
     },{
     name: "Iron buckets",
     id: "ironbuckets",
@@ -224,7 +235,8 @@ l.workshop.list = [{
     cost: [{id: "iron", val: 10}],
     prereq: {res: ["iron"]},
     des: "Infuse pickaxes with iron; this will allow them to be sturdier and stronger",
-    log: "Infusation successful; pickaxes are stronger than ever before - but they don't seem to give much more iron"
+    log: "Infusation successful; pickaxes are stronger than ever before",
+    effect: "mining ore amount + 2"
     },{
     name: "Iron tools",
     id: "irontools",
@@ -250,7 +262,8 @@ l.workshop.list = [{
     cost: [{id: "iron", val: 10}],
     prereq: {res: ["iron"]},
     des: "Make an iron tipped walking stick to walk further, faster",
-    log: "Building successful; I can now walk faster"
+    log: "Building successful; I can now walk faster",
+    effect: "Explore speed + 2"
     },{
     name: "Iron tipped spears",
     id: "ironspears",
@@ -258,7 +271,8 @@ l.workshop.list = [{
     cost: [{id: "iron", val: 10}],
     prereq: {res: ["iron"]},
     des: "Make iron spears to take down bigger game",
-    log: "Iron tipped spears are ready!"
+    log: "Iron tipped spears are ready!",
+    effect: "Hunting multiplier +4"
     },{
     name: "Iron bowls",
     id: "ironbowls",
@@ -266,7 +280,8 @@ l.workshop.list = [{
     cost: [{id: "iron", val: 50}],
     prereq: {minres: [{id: "iron", val:30}]},
     des: "Infuse bowls with iron to give an additive boost to rain collectors",
-    log: "Water bowls are now help rain collectors collect water"
+    log: "Water bowls are now help rain collectors collect water",
+    effect: "Building speed = 3"
     },{
     name: "Iron/wood jets",
     id: "ironwoodjets",
@@ -275,7 +290,7 @@ l.workshop.list = [{
     prereq: {minres: [{id: "iron", val:50}]},
     des: "Add a network of iron and wood pipes to connect all water things together",
     log: "Connected bowls, rain collectors, waterstreams and wood farms",
-    effect: "Water things give each other an additive boost"
+    effect: "Almost all water things give each other a multiplicative boost"
     },{
     name: "Fish traps",
     id: "fishtraps",
@@ -283,7 +298,8 @@ l.workshop.list = [{
     cost: [{id: "rawmeat", val: 30}],
     prereq: {explore: ["nearlake"]},
     des: "Bait fishies with meat to get more meat",
-    log: "Rigged up the lake with fish nets! Now traps gives more meat"
+    log: "Rigged up the lake with fish nets! Now traps gives more meat",
+    effect: "Traps multiplier + 1"
     },{
     name: "Coal bonfires",
     id: "coalbonfires",
@@ -291,7 +307,8 @@ l.workshop.list = [{
     cost: [{id: "iron", val: 20}],
     prereq: {explore: ["coalcave"]},
     des: "Extract coal from bonfires with new iron pokers",
-    log: "Now smelters are providing a feeble coal boost"
+    log: "Now bonfires are providing a feeble coal boost",
+    effect: "Bonfires coal gain is 0.001"
     },{
     name: "Coal torches",
     id: "coaltorches",
@@ -299,14 +316,16 @@ l.workshop.list = [{
     cost: [{id: "coal", val: 50}],
     prereq: {explore: ["coalcave"]},
     des: "Coal torches last longer than before",
-    log: "Yay! Now I waste way less time making torches, which means more time for mining"
+    log: "Yay! Now I waste way less time making torches, which means more time for mining",
+    effect: "Ore (job) time -2"
     },{
     id: "torchholders",
     time: 250,
     cost: [{id: "coal", val: 50},{id: "wood", val: 1000}],
     prereq: {workshop: ["coaltorches"]},
     des: "Torch holders free both hands for mining",
-    log: "Yes, now mining will be faster and more productive"
+    log: "Yes, now mining will be faster and more productive",
+    effect: ["ore (job) time -1","ore (job) multiplier +1"]
     },{
     name: "Graphite smelters",
     id: "graphitesmelters",
@@ -314,7 +333,8 @@ l.workshop.list = [{
     cost: [{id: "iron", val: 20}],
     prereq: {minres: [{id: "iron", val:10}]},
     des: "Teach your smelters to extract graphite",
-    log: "Now I should also be gaining graphite..."
+    log: "Now I should also be gaining graphite...",
+    effect: "smelter graphite +0.01"
     },{
     name: "Reinforced sheds",
     id: "woodplanksheds",
@@ -322,7 +342,8 @@ l.workshop.list = [{
     cost: [{id: "woodplank", val: 20}],
     prereq: {res: ["woodplank"]},
     des: "Use wooden planks to gain extra space for sheds",
-    log: "Sheds have been reinforced and a new design has been discovered!"
+    log: "Sheds have been reinforced and a new design has been discovered!",
+    effect: ["Unlock woodplank sheds","Sheds store more stuff"]
     },{
     name: "Steel small axes",
     id: "steelsmallaxes",
@@ -330,7 +351,8 @@ l.workshop.list = [{
     cost: [{id: "steel", val: 10}],
     prereq: {res: ["steel"]},
     des: "Small steel axes are stronger, lighter and faster",
-    log: "I am in awe at how poweful these axes have become"
+    log: "I am in awe at how poweful these axes have become",
+    effect: ["Small woodc. m x2","Small woodc. time -> 1"]
     },{
     name: "Steel medium axes",
     id: "steelmediumaxes",
@@ -338,7 +360,8 @@ l.workshop.list = [{
     cost: [{id: "steel", val: 10}],
     prereq: {res: ["steel"]},
     des: "Medium steel axes are stronger, lighter and faster",
-    log: "I am in awe at how poweful these axes have become"
+    log: "I am in awe at how poweful these axes have become",
+    effect: ["Medium woodc. m x3","Medium woodc. time -> 5"]
     },{
     name: "Steel big axes",
     id: "steelbigaxes",
@@ -346,15 +369,17 @@ l.workshop.list = [{
     cost: [{id: "steel", val: 10}],
     prereq: {res: ["steel"]},
     des: "Big steel axes are stronger, lighter and faster",
-    log: "I am in awe at how poweful these axes have become"
+    log: "I am in awe at how poweful these axes have become",
+    effect: ["Large woodc. multiplier x3","Large woodc. time -> 50"]
     },{
     name: "Steel sheds",
-    id: "steelaxes",
+    id: "steelsheds",
     time: 800,
     cost: [{id: "steel", val: 10}],
-    prereq: {res: ["woodplank"]},
-    des: "Steel axes are stronger, lighter and faster",
-    log: "I am in awe at how poweful these axes have become"
+    prereq: {res: ["steel"]},
+    des: "Steel sheds are much sturdier and therefore larger",
+    log: "I guess this is it then..",
+    effect: "Sheds multiplier +5"
     },{
     name: "H@CK3R",
     id: "H@CK3R",
@@ -371,8 +396,9 @@ l.workshop.setup = function(){
         if (this.list[i].cost === undefined){this.list[i].cost = []};
         if (this.list[i].vis === undefined){this.list[i].vis = false};
         if (this.list[i].bought === undefined){this.list[i].bought = false};
-        if (this.list[i].prereq === undefined)(this.list[i].prereq = []);
-        if (this.list[i].type === undefined)(this.list[i].type = "craft");
+        if (this.list[i].prereq === undefined){this.list[i].prereq = []};
+        if (this.list[i].type === undefined){this.list[i].type = "craft"};
+        if (typeof(this.list[i].effect)==typeof('')){this.list[i].effect = [this.list[i].effect]};
         this.list[i].checkprereq = function(){
             var unlocked = true;
             if (this.prereq.explore){
@@ -406,6 +432,7 @@ l.workshop.setup = function(){
 
 l.workshop.updateall = function(){
     l.workshop.updateallprereq();
+    l.workshop.updateNumBought();
     l.workshop.globalspeedboost = l.workshop.getspeedboost();
 }
 
@@ -443,6 +470,7 @@ l.workshop.finished = function(id){
     } else {
         l.log("I researched "+item.name+" today.");
     }
+    l.workshop.lastBought = id;
     l.updateall();
 }
 
@@ -455,14 +483,63 @@ l.workshop.getspeedboost = function(){
     return sb;
 }
 
+l.workshop.currentScreen = 'all';
+
 //draw the workshop
 l.workshop.draw = function(){
     l.workshop.updateallprereq();
+    if (l.workshop.currentScreen == 'all'){
+        l.workshop.drawBuyable();
+    } else if (l.workshop.currentScreen == 'bought'){
+        l.workshop.drawBought();
+    } else if (l.workshop.currentScreen == 'single'){
+        l.workshop.drawSingle(l.workshop.singleId);
+    }
+}
+
+l.workshop.numBought = 0;
+l.workshop.updateNumBought = function(){
+    l.workshop.numBought = 0;
+    for (var i in this.list){if (this.list[i].bought){l.workshop.numBought++}}
+}
+
+l.workshop.drawTabbar = function(){
     x = document.getElementById("maingame");
     x.innerHTML = "";
+    if (l.workshop.numBought>=5){
+        var toadd = "<div id='workshoptabbar'><div onclick='l.workshop.changeScreenBuyable()' class='workshoptab'>Unlocked</div>";
+        toadd+="<div onclick='l.workshop.changeScreenBought()' class='workshoptab'>Bought</div>";
+        if (l.workshop.lastBought != undefined){toadd+="<div onclick='l.workshop.changeScreenSingle()' class='workshoptab'>Last bought</div>"}
+        toadd += "</div>";
+        x.innerHTML += toadd;
+    }
+}
+
+l.workshop.changeScreenBuyable = function(){
+    l.workshop.currentScreen='all';
+    l.workshop.drawBuyable();
+}
+
+l.workshop.changeScreenBought = function(){
+    l.workshop.currentScreen='bought';
+    l.workshop.drawBought();
+}
+
+l.workshop.changeScreenSingle = function(){
+    l.workshop.currentScreen='single';
+    if (l.workshop.lastBought==undefined){
+        l.workshop.drawSingle(l.workshop.singleId)
+    } else {
+        l.workshop.drawSingle(l.workshop.lastBought)
+    }
+}
+
+l.workshop.drawBuyable = function(){
+    l.workshop.drawTabbar()
+    x = document.getElementById("maingame");
     for (var i in this.list){
         if ((this.list[i].vis) && !(this.list[i].bought)){
-            x.innerHTML += "<div class='workshopitem' id='workshop"+this.list[i].id+"' onclick = 'l.workshop.do(\""+this.list[i].id+"\")'></div>";
+            x.innerHTML += "<div class='workshopitem workshopclickable' id='workshop"+this.list[i].id+"' onclick = 'l.workshop.do(\""+this.list[i].id+"\")'></div>";
             y = document.getElementById("workshop"+this.list[i].id);
             y.innerHTML += "<div class='workshopitemtitle'>"+this.list[i].name+"</div>";
             y.innerHTML += "<div class='workshopitemtime'>Time: "+l.display(this.list[i].time/l.workshop.globalspeedboost)+"</div>";
@@ -473,6 +550,42 @@ l.workshop.draw = function(){
             if (costgrid!==""){y.innerHTML += "<div class='workshopitembox workshopitemcostgrid'><div class='workshopitemlistcaption'>Cost:</div>"+costgrid+"</div>";}
             y.innerHTML += "<div class='workshopitemdes'>"+this.list[i].des+"</div>";
         }
+    }
+}
+
+l.workshop.drawBought = function(){
+    l.workshop.drawTabbar();
+    x = document.getElementById("maingame");
+    for (var i in this.list){
+        if ((this.list[i].vis) && (this.list[i].bought)){
+            x.innerHTML += "<div class='workshopboughtitem workshopclickable' id='workshop"+this.list[i].id+"' onclick='l.workshop.drawSingle(\""+this.list[i].id+"\")'></div>";
+            y = document.getElementById("workshop"+this.list[i].id);
+            y.innerHTML += "<div class='workshopitemtitle'>"+this.list[i].name+"</div>";
+            if (this.list[i].effect){
+                y.innerHTML += "<div class='workshopitemeffect'>"+this.list[i].effect.join('<br>')+"</div>"
+            }
+        }
+    }
+    x.innerHTML += '<div><b>Note:</b> multiplier multiplies by 5 DOES NOT GUARANTEE a production increase of 5 - contact me if you really wanna know why.</div>';
+}
+
+l.workshop.drawSingle = function(id){
+    l.workshop.singleId = id;
+    l.workshop.drawTabbar();
+    x = document.getElementById("maingame");
+    var z = l.workshop.get(id);
+    x.innerHTML += "<div class='workshopitem' id='workshop"+z.id+"'></div>";
+    y = document.getElementById("workshop"+z.id);
+    y.innerHTML += "<div class='workshopitemtitle'>"+z.name+"</div>";
+    y.innerHTML += "<div class='workshopitemtime'>Time: "+l.display(z.time/l.workshop.globalspeedboost)+"</div>";
+    costgrid = "";
+    for (var j in z.cost){
+        costgrid += "<div class='jobitemcostitem'>"+z.cost[j].name+": "+(z.cost[j].val*z.cost[j].mul)+"</div>";
+    }
+    if (costgrid!==""){y.innerHTML += "<div class='workshopitembox workshopitemcostgrid'><div class='workshopitemlistcaption'>Cost:</div>"+costgrid+"</div>";}
+    y.innerHTML += "<div class='workshopitemdes'>"+z.des+"</div>";
+    if (z.effect){
+        y.innerHTML += "<div class='workshopitemeffect'><b>Effect:</b> "+z.effect.join('<br>')+"</div>"
     }
 }
 

@@ -65,6 +65,7 @@ l.buildings.list = [{
         if (l.workshop.get("plainsheds").bought){m += 0.5}
         if (l.workshop.get("ironsheds").bought){m += 1}
         if (l.workshop.get("woodplanksheds").bought){m += 0.5}
+        if (l.workshop.get("steelsheds").bought){m += 5}
         return m;
     }
     },{
@@ -199,19 +200,26 @@ l.buildings.list = [{
     },{
     id: "plankstorage",
     time: 10,
-    basecost: [{id: "woodplank", val: 10}],
+    basecost: [{id: "woodplank", val: 25}],
     prereq: {workshop: ["woodplanksheds"]},
-    des: "Build a basic storage using wooden planks",
-    ratio: 1.2,
+    des: "Build a basic storage using wooden planks, for wood",
+    addRatio: 0.3,
     get: [
         {id: "waterCap", val: 50},
-        {id: "woodCap", val: 50},
+        {id: "woodCap", val: 300},
         {id: "ironCap", val: 5},
         {id: "oreCap", val: 5},
         {id: "rawmeatCap", val: 5},
         {id: "cookedmeatCap", val: 5},
         {id: "coalCap", val: 5}
     ],
+    getallgetmul: function(){
+        m = 1;
+        if (l.workshop.get("plainsheds").bought){m += 1}
+        if (l.workshop.get("ironsheds").bought){m += 1}
+        if (l.workshop.get("steelsheds").bought){m += 5}
+        return m;
+    }
     },{
     id: "furnace",
     time: 60,
@@ -291,7 +299,8 @@ l.buildings.setup = function(){
         }
         this.list[i].costmul = 1;
         this.list[i].updcostmultiplier = function(){
-            this.costmul = Math.pow(this.ratio,this.num);
+            if (this.ratio){this.costmul = Math.pow(this.ratio,this.num)}
+            if (this.addRatio){this.costmul = this.addRatio*this.num+1}
         }
         for (var j in this.list[i].get){
             this.list[i].get[j].baseval = this.list[i].get[j].val;

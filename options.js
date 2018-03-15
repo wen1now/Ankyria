@@ -39,6 +39,7 @@ l.gensave = function(){
         save.workshop.list[x.id].vis = x.vis;
         save.workshop.list[x.id].bought = x.bought;
     }
+    save.workshop.lastBought = l.workshop.lastBought;
     //buildingstuffs
     save.buildings = new Object();
     save.buildings.list = new Object();
@@ -146,6 +147,7 @@ l.load = function(save){
                 x.bought = save.workshop.list[x.id].bought;
             }
         }
+        l.workshop.lastBought = save.workshop.lastBought;
         for (var i in l.buildings.list){
             if (save.buildings.list[l.buildings.list[i].id]){
                 l.buildings.list[i].vis = save.buildings.list[l.buildings.list[i].id].vis;

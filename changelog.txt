@@ -1,4 +1,34 @@
+0.0.2.2.4 15/04
+- Changed a few workshop descriptions (too minor to list)
+- Fixed stupid workshop bug
+
+0.0.2.2.3 14/03
+- Chucked another link to the changelog in!
+- Restyled a bit of stuff
+
+0.0.2.2.2
+- Another minor bug again :(
+
+0.0.2.2.1
+- Yet another minor bug (something just wasn't showing up)
+
+0.0.2.2  14/03
+- Now the bought items are clickable for additional details!
+- Also made exploration area 'take up all the available room' as requested
+
+0.0.2.1  13/03
+- You can now see workshop bought items! Hooray!
+
+0.0.2.0.1
+13/03
+- Decided to log every update, no matter how small (so I need five places)
+- Changed price growth rate of wooden plank storages to be linear not exponential (!)
+
 0.0.2
+13/03
+- A bunch of upgrades added over the last few days
+- Storages should be slightly more gettable
+
 10/03/18
 - Water storage balances for early game
 
@@ -7,6 +37,8 @@
 - Balanced more stuff to speed things up more
 * Allowed queueing of a second job
 - Revamped more balancing
+
+Kinda went on a hiatus here
 
 08/03/18
 - Rebalanced stuffs (lower exploration times, cheaper storages)
