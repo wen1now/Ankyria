@@ -164,7 +164,7 @@ l.workshop.list = [{
     prereq: {res: ["cookedmeat"]},
     des: "Invent the meatball snack! This gives jobs greater energy boosts",
     log: "Jobs now give greater rewards, yay!",
-    effect: "exploration water divider +.2"
+    effect: ["exploration water divider +.2","global jobs +.5"]
     },{
     name: "Salami burger",
     id: "salamimain",
@@ -182,7 +182,7 @@ l.workshop.list = [{
     prereq: {workshop: ["meatballsnack","meatballmain"]},
     des: "Invent salami bites! These morsels can give massive energy",
     log: "Jobs now give even greater rewards, yay!",
-    effect: "More exploration speed"
+    effect: ["More exploration speed","global jobs +.5"]
     },{
     name: "Plain sheds",
     id: "plainsheds",
@@ -217,8 +217,8 @@ l.workshop.list = [{
     cost: [{id: "iron", val: 10}],
     prereq: {res: ["iron"]},
     des: "Infuse axes with iron; this will make axes last longer and be stronger",
-    log: "Infusation successful; axes will be more or less triple speed",
-    effect: "Axe speed increase"
+    log: "Infusation successful; axes will be more or less triply effective",
+    effect: "Axe amount increase"
     },{
     name: "Iron buckets",
     id: "ironbuckets",
@@ -343,7 +343,7 @@ l.workshop.list = [{
     prereq: {res: ["woodplank"]},
     des: "Use wooden planks to gain extra space for sheds",
     log: "Sheds have been reinforced and a new design has been discovered!",
-    effect: "Sheds store more stuff"
+    effect: ["Unlock woodplank sheds","Sheds store more stuff"]
     },{
     name: "Steel small axes",
     id: "steelsmallaxes",

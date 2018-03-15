@@ -1,4 +1,7 @@
-0.0.2.2.3
+0.0.2.2.4 15/04
+- Changed a few workshop descriptions (too minor to list)
+
+0.0.2.2.3 14/03
 - Chucked another link to the changelog in!
 - Restyled a bit of stuff
 

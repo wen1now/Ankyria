@@ -313,6 +313,7 @@ l.jobs.setallglobalboosts = function(){
     this.globalgetboost = this.getglobalgetboost();
 }
 
+/*Snacking doesn't seem all that good right now
 l.jobs.timeboost = 10
 l.jobs.settimeboost = function(){
     tb = 1
@@ -323,7 +324,6 @@ l.jobs.settimeboost = function(){
     l.jobs.timeboost = 10*tb;
 }
 
-/*Snacking doesn't seem all that good right now
 l.jobs.eatsnack = function(){
     if (l.res.get("cookedmeat").num>=10){
         l.res.get("cookedmeat").num-=10;
@@ -336,7 +336,6 @@ l.jobs.updateall = function(){
     l.jobs.updateallcost();
     l.jobs.updateallprereq();
     l.jobs.setalltime();
-    l.jobs.settimeboost();
 }
 
 //draw the jobs section
