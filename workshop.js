@@ -504,9 +504,9 @@ l.workshop.updateNumBought = function(){
 }
 
 l.workshop.drawTabbar = function(){
+    x = document.getElementById("maingame");
+    x.innerHTML = "";
     if (l.workshop.numBought>=5){
-        x = document.getElementById("maingame");
-        x.innerHTML = "";
         var toadd = "<div id='workshoptabbar'><div onclick='l.workshop.changeScreenBuyable()' class='workshoptab'>Unlocked</div>";
         toadd+="<div onclick='l.workshop.changeScreenBought()' class='workshoptab'>Bought</div>";
         if (l.workshop.lastBought != undefined){toadd+="<div onclick='l.workshop.changeScreenSingle()' class='workshoptab'>Last bought</div>"}
