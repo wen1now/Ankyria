@@ -47,7 +47,8 @@ l.res.list = [{
     capped: true
     },{
     id: "carbon",
-    des: "Pure carbon. Extremely useful"
+    des: "Pure carbon. Extremely useful",
+    capped: true
     },{
     id: "iron",
     des: "Sturdy building material",

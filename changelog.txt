@@ -2,6 +2,7 @@
 - Water collectors more balanced
 - I mean, if you realy want you can look at the changes on github
 * Other stuff now gives coal too (!)
+- Capped carbon
 
 0.0.2.2.4 15/03
 - Changed a few workshop descriptions (too minor to list)
