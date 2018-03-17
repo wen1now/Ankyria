@@ -345,6 +345,23 @@ l.workshop.list = [{
     log: "Sheds have been reinforced and a new design has been discovered!",
     effect: ["Unlock woodplank sheds","Sheds store more stuff"]
     },{
+    name: "Waterbowl collecters",
+    id: "waterbowlcol",
+    time: 1600,
+    cost: [{id: "iron", val: 500},{id: "wood", val: 15000}],
+    prereq: {minres: [{id: "iron", val:100}]},
+    des: "Boost water collectors substantially",
+    effect: "Water collectors' multiplier grows quadratically w.r.t number of waterbowls"
+    },{
+    name: "Workbench",
+    id: "workbench",
+    time: 1200,
+    cost: [{id: "woodplank", val: 2000},{id: "wood", val: 15000}],
+    prereq: {minres: [{id: "woodplank", val:1000}]},
+    des: "Build a workbench to further enhance workshop speed",
+    log: "Finished making a workbench",
+    effect: "Workshop speed multiplier x2"
+    },{
     name: "Steel small axes",
     id: "steelsmallaxes",
     time: 800,
@@ -380,6 +397,15 @@ l.workshop.list = [{
     des: "Steel sheds are much sturdier and therefore larger",
     log: "I guess this is it then..",
     effect: "Sheds multiplier +5"
+    },{
+    name: "Steel tools",
+    id: "steeltools",
+    time: 800,
+    cost: [{id: "steel", val: 10}],
+    prereq: {res: ["steel"]},
+    des: "Steel tools boost workshops a bit more",
+    log: "Finished making steel tools",
+    effect: "Workshop speed multiplier -> 25"
     },{
     name: "H@CK3R",
     id: "H@CK3R",
@@ -480,6 +506,8 @@ l.workshop.getspeedboost = function(){
     if (l.workshop.get("woodtools").bought){sb=2};
     if (l.workshop.get("woodtools2").bought){sb=3};
     if (l.workshop.get("irontools").bought){sb=5};
+    if (l.workshop.get("steeltools").bought){sb=25};
+    if (l.workshop.get("workbench").bought){sb*=2};
     return sb;
 }
 
@@ -545,7 +573,7 @@ l.workshop.drawBuyable = function(){
             y.innerHTML += "<div class='workshopitemtime'>Time: "+l.display(this.list[i].time/l.workshop.globalspeedboost)+"</div>";
             costgrid = "";
             for (var j in this.list[i].cost){
-                costgrid += "<div class='jobitemcostitem'>"+this.list[i].cost[j].name+": "+(this.list[i].cost[j].val*this.list[i].cost[j].mul)+"</div>";
+                costgrid += "<div class='jobitemcostitem'>"+this.list[i].cost[j].name+": "+l.display(this.list[i].cost[j].val*this.list[i].cost[j].mul)+"</div>";
             }
             if (costgrid!==""){y.innerHTML += "<div class='workshopitembox workshopitemcostgrid'><div class='workshopitemlistcaption'>Cost:</div>"+costgrid+"</div>";}
             y.innerHTML += "<div class='workshopitemdes'>"+this.list[i].des+"</div>";
@@ -580,7 +608,7 @@ l.workshop.drawSingle = function(id){
     y.innerHTML += "<div class='workshopitemtime'>Time: "+l.display(z.time/l.workshop.globalspeedboost)+"</div>";
     costgrid = "";
     for (var j in z.cost){
-        costgrid += "<div class='jobitemcostitem'>"+z.cost[j].name+": "+(z.cost[j].val*z.cost[j].mul)+"</div>";
+        costgrid += "<div class='jobitemcostitem'>"+z.cost[j].name+": "+l.display(z.cost[j].val*z.cost[j].mul)+"</div>";
     }
     if (costgrid!==""){y.innerHTML += "<div class='workshopitembox workshopitemcostgrid'><div class='workshopitemlistcaption'>Cost:</div>"+costgrid+"</div>";}
     y.innerHTML += "<div class='workshopitemdes'>"+z.des+"</div>";

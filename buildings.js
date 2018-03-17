@@ -22,6 +22,7 @@ l.buildings.list = [{
             if (l.workshop.get("leafcol2").bought){m+=4}
             if (l.workshop.get("ironbowls").bought){m+=l.buildings.get("waterbowl").num*0.1}
             if (l.workshop.get("ironwoodjets").bought){m += l.buildings.get("waterbowl").num*0.2}
+            if (l.workshop.get("ironwoodjets").bought){m += l.buildings.get("waterbowl").num*l.buildings.get("waterbowl").num*0.02}
             return m;
             }
         },{
@@ -154,6 +155,10 @@ l.buildings.list = [{
         var m = 0;
         if (l.workshop.get("graphitesmelters").bought){m += 1}
         return m;
+    }},{id: "coal", val: 0.0003, getmul: function(){
+        m = 0;
+        if (l.workshop.get("coalbonfires").bought){m += 1}
+        return m;
     }}]
     },{
     name: "Carbon storage",
@@ -229,7 +234,12 @@ l.buildings.list = [{
     convert: true,
     ratio: 1.2,
     change: [{id: "iron", val: 0.1}, {id: "carbon", val: 0.01}],
-    get: [{id: "steel", val: 0.001}]
+    get: [{id: "steel", val: 0.001},
+        {id: "coal", val: 0.01, getmul: function(){
+            m = 0;
+            if (l.workshop.get("coalbonfires").bought){m += 1}
+            return m;
+    }}]
     }
 ];
 
