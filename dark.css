@@ -18,162 +18,26 @@
 */
 
 html,body {
-    height:100%;
-    overflow: hidden;
     background-color: #111;
-    font-family: times new roman;
     color: #aaa;
 }
 
-#gameContainer {
-    width: 100%;
-    height: 96%;
-    position: relative;
-}
-
-#license {
-    font-size: 12pt;
-    display: inline-block;
-    float: right;
-}
-
-#changelog {
-    font-size: 12pt;
-    display: inline-block;
-    float: right;
-    margin-right: 6px;
-}
-
 #changelogpopup {
-    width: 300px;
-    height: 210px;
-    top: 30px;
-    right: 80px;
-    position: fixed;
-    visibility: hidden;
     background-color: black;
-    padding: 10px;
-    border: 2px solid #aaa;
-    border-radius: 2px;
 }
-
-#topbar {
-    float: top;
-    width: 100%;
-    clear: both;
-    height: 40px;
-}
-
-#topbarjob {
-    float: left;
-    margin-right: 20px;
-}
-
-#topbarnextjob {
-    float: left;
-}
-
-#canceljob {
-    padding: 1px;
-    cursor: pointer;
-    height: 16px;
-}
-
 #canceljob:active {
     color: #777;
 }
 
-#notenoughwarning {
-    position: fixed;
-    border-radius: 8px;
-    background-color: #ff5555;
-    width: 30%;
-    font-size: 20px;
-    left: 400px;
-    border: solid black;
-    text-align: center;
-}
 /*--------------------------
 logstuff*/
 
-#logCont {
-    float: left;
-    width: 30%;
-    height: 70%;
-    border-style: solid solid none solid;
-    border-width: 1px;
-}
 
-#logHead {
-    font-size: 16pt;
-}
-
-.logtimestamp {
-    font-weight: bold;
-}
-
-.logwarning {
-    color: red;
-    font-weight: bold;
-}
 
 /*--------------------------------
 Options*/
-#optionsico {
-    width: 16px;
-    height: 16px;
-    position: absolute;
-    right: 0px;
-    bottom: 40px;
-}
 
-#optionsmenu {
-    position: absolute;
-    visibility: hidden;
-    overflow: hidden;
-    top: -116px;
-    left: -180px;
-}
 
-#optionsico:hover #optionsmenu {
-    visibility: visible;
-}
-
-.optionsitem {
-    margin: 1px;
-    cursor: pointer;
-    float: top;
-    background-color: #676767;
-    color: white;
-    width: 200px;
-    border-radius: 2px;
-    border: 1px solid black;
-    padding-left: 5px;
-    font-size: 20px;
-}
-
-#savenotify {
-    position: fixed;
-    right: 10px;
-    top: 40px;
-    background-color: #54a;
-    font-style: bold;
-    width: 100px;
-    border-radius: 3px;
-    border: 2px solid black;
-    padding-left: 5px;
-    height: 20px;
-}
-
-#skipstory {
-    width: 120px;
-    font-size: 12pt;
-    background-color: #a1f1c3;
-    border: 2px solid black;
-    border-radius: 1px;
-    cursor: pointer;
-    margin-right: 10px;
-}
 
 /*
 #nextstory {
@@ -191,220 +55,52 @@ textarea {
 }
 
 .exportbox {
-    width: 500px;
-    height: 400px;
-    top: 20px;
-    right: 20px;
-    position: fixed;
-    visibility: hidden;
     background-color: black;
-    padding: 10px;
     border: 2px solid #aaa;
-    border-radius: 2px;
-}
-
-.exportbox.show {
-    visibility: visible;
-}
-
-#exporttext {
-    width: 100%;
-    height: 95%;
-}
-
-#importtext {
-    width: 100%;
-    height: 90%;
 }
 
 .closepopup {
-    position: absolute;
-    right: 6px;
-    top: 6px;
-    /*
-    width: 10px;
-    height: 10px;*/
-    padding: 1px;
     background-color: white;
 }
 /*--------------------------------
 Rightside stuff*/
 
-#middle {
-    float: left;
-    width: 50%;
-    margin-left: 25px;
-}
-
-.tabbars {
-    float: left;
-    width: 100%;
-}
 
 /*============================================Main GAME=========================================*/
-#maingame {
-    padding-top: 25px;
-    margin: 10px;
-    height: 75vh;
-    width: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-
-#sidebar {
-    position: fixed;
-    width: 200px;
-    right: 10px;
-    top: 80px;
-}
 
 /*this is where the tab buttons are styled*/
 .tabBut {
-    width: 120px;
-    float: left;
-    margin-left: 10px; /*probs style this more later*/
-    margin-bottom: 2px;
-    font-size: 12pt;
     background-color: #5ca0cc;
-    border: 2px solid black;
-    border-radius: 1px;
     color: #1b4386;
-    cursor: pointer;
 }
 
 #tooltip {
-    width: 140px;
-    padding: 5px;
     border: 1px solid #777;
     background-color: #333;
- 
-    /* Position the tooltip text - see examples below! */
-    position: fixed;
-    z-index: 2;
 }
 /*----------------------------------
 Calendar*/
 
-#cal {
-    float: right;
-}
-
-#calhour {
-    float: left;
-    padding-right: 4px;
-}
-
-#calday {
-    float: left;
-    padding-right: 4px;
-}
-
-#calyear {
-    float: left;
-    padding-right: 4px;
-}
-
 /*----------------------------------
 fade ins*/
-.fadein {
-    opacity:0;
-    transition: opacity 0.8s;
-}
-
 
 /*----------------------------------
 shuttle stuff*/
 #shuttleReslistTitle {
-    float: left;
-    clear: both;
-    font-weight: bold;
-    font-family: 'Helvetica Neue', sans-serif;
-    letter-spacing: -1px;
-    font-size: 24px;
     color: #aaaaaa;
-}
-
-.shuttleReslistItem {
-    float: left;
-    clear: both;
-    display: inline-block;
-}
-
-.shuttleReslistNum {
-    width: 100px;
-    display: inline-block;
-}
-
-.shuttleReslistCap {
-    width: 100px;
-    display: inline-block;
-}
-
-.shuttleReslistName {
-    width: 120px;
-    float: left;
-}
-
-.shuttleReslistGain {
-    width: 80px;
-    display: inline-block;
-}
-
-.shuttleReslistGainTime {
-    width: 50px;
-    display: inline-block;
 }
 
 /*Sidebar stuff*/
 
 #miniResTitle {
-    float: left;
-    clear: both;
-    font-weight: bold;
-    font-family: 'Helvetica Neue', sans-serif;
-    letter-spacing: -1px;
-    font-size: 24px;
     color: #333333
-}
-
-.sidebarReslistItem {
-    float: left;
-    clear: both;
-    display: inline-block;
-}
-
-.sidebarReslistNum {
-    width: 60px;
-    display: inline-block;
-}
-
-.sidebarReslistCap {
-    width: 60px;
-    display: inline-block;
-}
-
-.sidebarReslistName {
-    width: 80px;
-    float: left;
 }
 
 /*-----------------------------------------*/
 /*explore stuff*/
-#explorebox {
-    width: 500px;
-    height: 500px;
-    overflow: auto;
-    position: relative;
-}
 
 .exploreico {
-    width: 16px;
-    height: 16px;
-    position: absolute;
-    border-style: solid;
     border-color: #aaa;
-    border-width: 1px;
-    cursor: pointer;
 }
 
 .explorebought {
@@ -419,32 +115,11 @@ shuttle stuff*/
 
 /* Tooltip text */
 .exploretooltip {
-    visibility: hidden;
-    width: 160px;
     background-color: black;
     color: #eee;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #eee;
-
-    /* Position the tooltip text */
-    position: absolute;
-    z-index: 1;
-    top: -5px;
-    left: calc(100% + 18px);
-}
-
-/* Show the tooltip text when you mouse over the tooltip container */
-.exploreico:hover .exploretooltip {
-    visibility: visible;
-    opacity: 1;
 }
 
 .explorelocname {
-    font-size: 18px;
     color: #abcdef;
 }
 
@@ -462,15 +137,6 @@ shuttle stuff*/
 
 /*----------------------------------
 job stuff*/
-
-#eatsnack {
-    float: top;
-    border: solid;
-    border-radius: 2px;
-    margin: 10px 5px;
-    padding: 5px 5px 10px;
-    display: inline-block;
-}
 
 #eatsnack:active {
     background-color: #777;

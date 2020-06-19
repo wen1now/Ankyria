@@ -106,9 +106,9 @@ l.load = function(save){
     if (!save){var save = JSON.parse(localStorage.getItem("__save"));}
     if (save){
         for (var i in l.tabs.list){
-            for (var j in l.tabs.list[i]){
-                if (save.tabs.list[l.tabs.list[i][j].id]){
-                    l.tabs.list[i][j].vis = save.tabs.list[l.tabs.list[i][j].id].vis;
+            for (var j in l.tabs.list[i].subtabs){
+                if (save.tabs.list[l.tabs.list[i]][j.id]){
+                    l.tabs.list[i].subtabs[j].vis = save.tabs.list[l.tabs.list[i]][j.id].vis;
                 }
             }
         }
@@ -211,7 +211,7 @@ l.savefade = function(element){
 l.currenttheme = 0;
 l.themes = ["!style.css","dark.css"]
 l.changeCSS = function(newcss){
-    var oldlink = document.getElementsByTagName("link").item(0);
+    //.item(0) is the base for like the whole page i think, .item(1) is the base stylesheet
     var newlink = document.createElement("link");
     newlink.setAttribute("rel", "stylesheet");
     newlink.setAttribute("type", "text/css");
@@ -223,5 +223,11 @@ l.changeCSS = function(newcss){
     } else if (typeof(newcss)==typeof('')) {
         newlink.setAttribute("href", newcss)
     }
-    document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
+    //if len(document.getElementsByTagName("head")[0])
+    if (document.getElementsByTagName("link").length == 2){
+        document.getElementsByTagName("head")[0].appendChild(newlink);
+    } else {
+        var oldlink = document.getElementsByTagName("link").item(2);
+        document.getElementsByTagName("head")[0].replaceChild(newlink, oldlink);
+    }
 }

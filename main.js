@@ -103,7 +103,7 @@ l.tabs.setup = function(){
 l.tabs.metatabs = new Object();
 l.tabs.metalist = [
     {
-    name: "General",
+    name: "Basic",
     des: "Generalities",
     link: "shuttle",
     vis: true
@@ -197,7 +197,7 @@ l.display = function(input){
         var cut = Math.round(input*10/pow)/10;
         return inputsign+'e'+log10;
     } 
-};
+}
 
 //--------------------------------------------------
 //topbar stuff, jobs etc. etc.
@@ -322,7 +322,10 @@ l.drawtooltip = function(top,left,type,id){
             tooltip += "<div><b>Convert</b></div>";
             tooltip += temp;
         }
-        if (t.num==0){tooltip = "<big>"+t.name+"</big>"}
+        if (t.num==0){
+            tooltip = "<big>"+t.name+"</big>";
+            tooltip += "<br><small><i>You do not currently own any of this building and have no information on it</i></small>"
+        }
     }
     x.innerHTML = tooltip;
     x.style.visibility = "visible";
@@ -333,7 +336,7 @@ l.hidetooltip = function(){
 }
 
 //--------------------------------------------------
-//temporary stuff that gets tested now
+//temporary stuff that gets tested now goes here
 l.start = function(){
     l.res.setup();
     l.explore.setup();
@@ -353,7 +356,7 @@ l.start = function(){
     }
     l.updateall();
     setInterval(function(){l.tick()}, 1000);
-};
+}
 
 l.tick = function(){
     if (l.playing){

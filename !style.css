@@ -231,7 +231,7 @@ Rightside stuff*/
 
 /*this is where the tab buttons are styled*/
 .tabBut {
-    width: 120px;
+    width: 110px;
     float: left;
     margin-left: 10px; /*probs style this more later*/
     margin-bottom: 2px;
